@@ -1,0 +1,2027 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "API-TM+",
+    "dateExported": "2022-02-04T15:02:15.994Z",
+    "version": "1.1",
+    "folders": [{
+            "containerId": "8f82eb02-3588-4d3c-958f-0ba97030f1ca",
+            "sortNum": 10000,
+            "name": "catypeServer",
+            "_id": "5937330a-6bf0-48c4-a4ac-f412780b1fb7",
+            "created": "2022-01-28T22:49:09.406Z"
+        },
+        {
+            "containerId": "8f82eb02-3588-4d3c-958f-0ba97030f1ca",
+            "sortNum": 20000,
+            "name": "catypeContent",
+            "_id": "6c8e5dba-8f20-46b6-affa-2bdcbdfc98ad",
+            "created": "2022-01-28T22:26:19.593Z"
+        },
+        {
+            "containerId": "d6745a26-b331-4690-aa42-15d333d90354",
+            "sortNum": 20000,
+            "name": "movies ES",
+            "_id": "6ca22211-3814-4dd4-8490-9f3f23816ad5",
+            "created": "2022-01-31T18:03:16.927Z"
+        },
+        {
+            "containerId": "8f82eb02-3588-4d3c-958f-0ba97030f1ca",
+            "sortNum": 30000,
+            "name": "catQuality",
+            "_id": "a6b92084-ab8e-4be3-bb05-55e0c3baaa6d",
+            "created": "2022-01-28T22:12:07.630Z"
+        },
+        {
+            "containerId": "d6745a26-b331-4690-aa42-15d333d90354",
+            "sortNum": 30000,
+            "name": "movies EN",
+            "_id": "21b10090-0ca3-4e7b-b1d1-634a1ed6064d",
+            "created": "2022-01-31T19:13:20.409Z"
+        },
+        {
+            "containerId": "8f82eb02-3588-4d3c-958f-0ba97030f1ca",
+            "sortNum": 40000,
+            "name": "catPlataform",
+            "_id": "806d5890-34ae-40b1-bb77-d0082ed5305a",
+            "created": "2022-01-28T21:59:23.777Z"
+        },
+        {
+            "containerId": "d6745a26-b331-4690-aa42-15d333d90354",
+            "sortNum": 40000,
+            "name": "movies adult",
+            "_id": "4b6505ff-70aa-40bf-8e21-fc6557b13292",
+            "created": "2022-02-01T22:47:51.324Z"
+        },
+        {
+            "containerId": "8f82eb02-3588-4d3c-958f-0ba97030f1ca",
+            "sortNum": 50000,
+            "name": "catFormatVideo",
+            "_id": "f503c66a-4a97-4cb6-b1f0-38c01029a856",
+            "created": "2022-01-28T21:06:34.457Z"
+        },
+        {
+            "containerId": "8f82eb02-3588-4d3c-958f-0ba97030f1ca",
+            "sortNum": 60000,
+            "name": "catEpgChannel",
+            "_id": "9a0ba946-f89d-4098-8125-c7e70cb31465",
+            "created": "2022-01-28T19:43:49.690Z"
+        },
+        {
+            "containerId": "8f82eb02-3588-4d3c-958f-0ba97030f1ca",
+            "sortNum": 70000,
+            "name": "catcategory",
+            "_id": "002ee884-5c1d-4081-bed1-4cabd4d9d120",
+            "created": "2022-01-28T17:45:50.632Z"
+        },
+        {
+            "containerId": "8f82eb02-3588-4d3c-958f-0ba97030f1ca",
+            "sortNum": 80000,
+            "name": "cataudio",
+            "_id": "a29d8001-6a36-439b-a8ea-d47e837ad4c9",
+            "created": "2022-01-28T16:49:45.020Z"
+        },
+        {
+            "containerId": "",
+            "sortNum": 100000,
+            "name": "maintenance",
+            "_id": "8f82eb02-3588-4d3c-958f-0ba97030f1ca",
+            "created": "2022-01-31T18:02:17.304Z"
+        },
+        {
+            "containerId": "",
+            "sortNum": 120000,
+            "name": "movie",
+            "_id": "d6745a26-b331-4690-aa42-15d333d90354",
+            "created": "2022-01-31T19:13:59.901Z"
+        },
+        {
+            "containerId": "",
+            "sortNum": 130000,
+            "name": "tvshows",
+            "_id": "577ade4a-7949-44ef-b859-a538c957b1d6",
+            "created": "2022-01-31T20:33:28.887Z"
+        },
+        {
+            "containerId": "577ade4a-7949-44ef-b859-a538c957b1d6",
+            "sortNum": 140000,
+            "name": "tv shows EN",
+            "_id": "040ef256-90fe-4074-b914-463bdea554d8",
+            "created": "2022-01-31T20:33:53.865Z"
+        },
+        {
+            "containerId": "577ade4a-7949-44ef-b859-a538c957b1d6",
+            "sortNum": 150000,
+            "name": "tv shows ES",
+            "_id": "e12c9c09-3c18-4977-b419-3bd75e1411c1",
+            "created": "2022-01-31T21:08:29.867Z"
+        },
+        {
+            "containerId": "577ade4a-7949-44ef-b859-a538c957b1d6",
+            "sortNum": 160000,
+            "name": "tvshowschapter",
+            "_id": "6bb89461-19eb-44e9-b63e-abe87af35e03",
+            "created": "2022-02-01T17:33:57.502Z"
+        }
+    ],
+    "requests": [{
+            "containerId": "a29d8001-6a36-439b-a8ea-d47e837ad4c9",
+            "sortNum": 10000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllCataudio",
+            "url": "http://localhost:3001/cataudio/6",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:28.358Z",
+            "created": "2022-01-26T21:40:46.227Z",
+            "_id": "8fa9b567-d18d-4b71-bd41-bcf579d1ebe7",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "a29d8001-6a36-439b-a8ea-d47e837ad4c9",
+            "sortNum": 20000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getCataudioById",
+            "url": "http://localhost:3001/cataudio/1",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:28.364Z",
+            "created": "2022-01-26T22:23:44.075Z",
+            "_id": "91014b0c-4fbd-4303-a705-c9ac42474719",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME\": \"HOLA\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "a29d8001-6a36-439b-a8ea-d47e837ad4c9",
+            "sortNum": 30000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertCatAudio",
+            "url": "http://localhost:3001/cataudio/",
+            "method": "POST",
+            "modified": "2022-01-31T18:02:28.443Z",
+            "created": "2022-01-26T21:40:46.227Z",
+            "_id": "f6c9f83f-21da-4b6a-8b4c-e06f563e6fc0",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME\": \"INGLES\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "a29d8001-6a36-439b-a8ea-d47e837ad4c9",
+            "sortNum": 40000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "UpdateCatAudioById",
+            "url": "http://localhost:3001/cataudio/8",
+            "method": "PUT",
+            "modified": "2022-01-31T18:02:28.493Z",
+            "created": "2022-01-28T17:07:39.243Z",
+            "_id": "251b3ef5-47aa-4895-a15a-07283cc986a8",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME\": \"ITALIANO\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "a29d8001-6a36-439b-a8ea-d47e837ad4c9",
+            "sortNum": 50000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "DeleteCatAudio",
+            "url": "http://localhost:3001/cataudio/8",
+            "method": "DELETE",
+            "modified": "2022-01-31T18:02:28.543Z",
+            "created": "2022-01-28T17:13:42.563Z",
+            "_id": "cccf3efc-0256-4b4e-ac21-d1e71efb31cb",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME\": \"ITALIANO\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "002ee884-5c1d-4081-bed1-4cabd4d9d120",
+            "sortNum": 60000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllCatcategory",
+            "url": "http://localhost:3001/catcategory/",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:27.140Z",
+            "created": "2022-01-28T17:46:40.468Z",
+            "_id": "76eb2a7b-33a4-49bd-a280-70a754f1d18a",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "002ee884-5c1d-4081-bed1-4cabd4d9d120",
+            "sortNum": 70000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getCatcategoryById",
+            "url": "http://localhost:3001/catcategory/1",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:27.143Z",
+            "created": "2022-01-28T17:47:36.974Z",
+            "_id": "2e7d9196-912a-4abb-af91-871a19197317",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "002ee884-5c1d-4081-bed1-4cabd4d9d120",
+            "sortNum": 75000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getCatcategoryByType",
+            "url": "http://localhost:3001/catcategory/type/3",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:27.296Z",
+            "created": "2022-01-28T19:29:44.749Z",
+            "_id": "8ef9178e-0052-40c4-9e1f-4bbe0c241b48",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "002ee884-5c1d-4081-bed1-4cabd4d9d120",
+            "sortNum": 80000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertCatcategory",
+            "url": "http://localhost:3001/catcategory/",
+            "method": "POST",
+            "modified": "2022-01-31T18:02:27.353Z",
+            "created": "2022-01-28T17:54:41.137Z",
+            "_id": "a2faea8b-d96b-48ed-95f2-9f5d396c088c",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME\": \"TV SHOWS\",\n    \"TYPE_CONTENT\": \"1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "002ee884-5c1d-4081-bed1-4cabd4d9d120",
+            "sortNum": 90000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "UpdateCatCategoryById",
+            "url": "http://localhost:3001/catcategory/8",
+            "method": "PUT",
+            "modified": "2022-01-31T18:02:27.412Z",
+            "created": "2022-01-28T18:04:02.787Z",
+            "_id": "596386f0-f931-4fbc-a61d-839664bdb71e",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME\": \"COMEDIA\",\n    \"TYPE_CONTENT\": \"3\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "002ee884-5c1d-4081-bed1-4cabd4d9d120",
+            "sortNum": 100000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "DeleteCatCategory",
+            "url": "http://localhost:3001/catcategory/7",
+            "method": "DELETE",
+            "modified": "2022-01-31T18:02:27.470Z",
+            "created": "2022-01-28T18:09:32.010Z",
+            "_id": "c9dc5b23-83d3-4780-bc58-5bdf11dfecc6",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME\": \"EVENTSSSSS\",\n    \"TYPE_CONTENT\": \"1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "9a0ba946-f89d-4098-8125-c7e70cb31465",
+            "sortNum": 130000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllCatepgchannel",
+            "url": "http://localhost:3001/catepgchannel/",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:26.013Z",
+            "created": "2022-01-28T20:04:54.618Z",
+            "_id": "ad51c607-ec0c-457c-b232-cc247caea054",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "9a0ba946-f89d-4098-8125-c7e70cb31465",
+            "sortNum": 150000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getCatepgchannelById",
+            "url": "http://localhost:3001/catepgchannel/1",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:26.015Z",
+            "created": "2022-01-28T20:06:05.219Z",
+            "_id": "83d5814a-f0a0-4cd7-b552-81925e70d5ba",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "6ca22211-3814-4dd4-8490-9f3f23816ad5",
+            "sortNum": 155000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllMovieES",
+            "url": "http://localhost:3001/mtmovie/es/",
+            "method": "GET",
+            "modified": "2022-01-31T19:17:51.345Z",
+            "created": "2022-01-31T18:03:45.250Z",
+            "_id": "568f8839-8ad7-474a-b915-a3d3381fb861",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "4b6505ff-70aa-40bf-8e21-fc6557b13292",
+            "sortNum": 155000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllMovieAdult",
+            "url": "http://localhost:4000/mtmovie/adult/",
+            "method": "GET",
+            "modified": "2022-02-02T16:45:42.362Z",
+            "created": "2022-02-01T22:47:51.324Z",
+            "_id": "5bc33577-9015-4ce5-a56d-f601169beeae",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"DURATION\": \"130m\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "21b10090-0ca3-4e7b-b1d1-634a1ed6064d",
+            "sortNum": 155000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllMovieEN",
+            "url": "http://localhost:3001/mtmovie/en/",
+            "method": "GET",
+            "modified": "2022-01-31T19:32:08.558Z",
+            "created": "2022-01-31T19:13:20.409Z",
+            "_id": "671c5cfb-4ec7-440b-8fb7-608a6d8505c0",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "9a0ba946-f89d-4098-8125-c7e70cb31465",
+            "sortNum": 160000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertcatepgchannel",
+            "url": "http://localhost:3001/catepgchannel/",
+            "method": "POST",
+            "modified": "2022-01-31T18:02:26.094Z",
+            "created": "2022-01-28T20:11:48.277Z",
+            "_id": "76ed0133-e6a2-4a2b-b6c1-1d674171a76c",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"COD_EPG\": \"1\",\n    \"COD_SERVER\": \"1\",\n    \"NAME_CHANNEL\": \"CHANNEL\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "9a0ba946-f89d-4098-8125-c7e70cb31465",
+            "sortNum": 170000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updatecatepgchannel",
+            "url": "http://localhost:3001/catepgchannel/4",
+            "method": "PUT",
+            "modified": "2022-01-31T18:02:26.146Z",
+            "created": "2022-01-28T20:16:42.695Z",
+            "_id": "1efe4526-939f-4987-bd4f-208661afa20b",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"COD_EPG\": \"1\",\n    \"COD_SERVER\": \"1\",\n    \"NAME_CHANNEL\": \"CHANNEL\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "9a0ba946-f89d-4098-8125-c7e70cb31465",
+            "sortNum": 190000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deletecatepgchannel",
+            "url": "http://localhost:3001/catepgchannel/3",
+            "method": "DELETE",
+            "modified": "2022-01-31T18:02:26.203Z",
+            "created": "2022-01-28T20:18:54.716Z",
+            "_id": "c7885f66-e15a-4190-972c-5dd31e0a9664",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "f503c66a-4a97-4cb6-b1f0-38c01029a856",
+            "sortNum": 200000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllFormatVideo",
+            "url": "http://localhost:3001/catformatvideo/",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:24.905Z",
+            "created": "2022-01-28T21:06:59.597Z",
+            "_id": "4d468dce-d60d-4bd7-a040-981e44f2ed0e",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "f503c66a-4a97-4cb6-b1f0-38c01029a856",
+            "sortNum": 210000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getCatFormatById",
+            "url": "http://localhost:3001/catformatvideo/2",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:24.908Z",
+            "created": "2022-01-28T21:07:34.403Z",
+            "_id": "c8f31c8e-065e-40db-a03f-5c2e236a010c",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "f503c66a-4a97-4cb6-b1f0-38c01029a856",
+            "sortNum": 220000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertCatFormatVideo",
+            "url": "http://localhost:3001/catformatvideo/",
+            "method": "POST",
+            "modified": "2022-01-31T18:02:24.987Z",
+            "created": "2022-01-28T21:15:31.039Z",
+            "_id": "43eb1255-3faa-4ddf-b922-89d1c62aa7c6",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_FORMAT\": \"3GP\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "f503c66a-4a97-4cb6-b1f0-38c01029a856",
+            "sortNum": 230000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updateCatformatVideo",
+            "url": "http://localhost:3001/catformatvideo/5",
+            "method": "PUT",
+            "modified": "2022-01-31T18:02:25.037Z",
+            "created": "2022-01-28T21:18:00.983Z",
+            "_id": "9aced5d9-c05c-4756-8cae-1c65b818bbb1",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_FORMAT\": \"3GGPP\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "4b6505ff-70aa-40bf-8e21-fc6557b13292",
+            "sortNum": 232500,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getMovieAdultById",
+            "url": "http://localhost:4000/mtmovie/adult/24",
+            "method": "GET",
+            "modified": "2022-02-02T16:45:52.062Z",
+            "created": "2022-02-01T22:47:51.324Z",
+            "_id": "0b18f3d7-7e8a-4772-b8a6-a6fb2deccc92",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "21b10090-0ca3-4e7b-b1d1-634a1ed6064d",
+            "sortNum": 232500,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getMovieENById",
+            "url": "http://localhost:3001/mtmovie/en/9",
+            "method": "GET",
+            "modified": "2022-01-31T19:45:14.090Z",
+            "created": "2022-01-31T19:13:20.409Z",
+            "_id": "53a38113-1a72-42fd-aed8-146a4783888e",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "6ca22211-3814-4dd4-8490-9f3f23816ad5",
+            "sortNum": 232500,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getMovieESById",
+            "url": "http://localhost:3001/mtmovie/es/2",
+            "method": "GET",
+            "modified": "2022-01-31T19:17:56.810Z",
+            "created": "2022-01-31T18:03:45.250Z",
+            "_id": "de9d996e-9367-4af4-ba97-237f5bd0e203",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "f503c66a-4a97-4cb6-b1f0-38c01029a856",
+            "sortNum": 240000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deleteCatFormatVideo",
+            "url": "http://localhost:3001/catformatvideo/5",
+            "method": "DELETE",
+            "modified": "2022-01-31T18:02:25.087Z",
+            "created": "2022-01-28T21:21:47.095Z",
+            "_id": "92bcf602-1f7d-46ba-8921-820641c4544a",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "6c8e5dba-8f20-46b6-affa-2bdcbdfc98ad",
+            "sortNum": 250000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllCatypeContent",
+            "url": "http://localhost:3001/catypecontent",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:21.152Z",
+            "created": "2022-01-28T22:26:19.593Z",
+            "_id": "06f4a889-0225-43af-a092-b79016b2550e",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "806d5890-34ae-40b1-bb77-d0082ed5305a",
+            "sortNum": 250000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllCatPlataform",
+            "url": "http://localhost:3001/catplataform/",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:23.901Z",
+            "created": "2022-01-28T22:00:49.553Z",
+            "_id": "0e4b01ac-f29b-48b9-9ce0-35fafb40523d",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "a6b92084-ab8e-4be3-bb05-55e0c3baaa6d",
+            "sortNum": 250000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllCatQuality",
+            "url": "http://localhost:3001/catquality",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:22.262Z",
+            "created": "2022-01-28T22:12:07.630Z",
+            "_id": "45a58a5c-88bf-4afd-9704-011cbe2afe84",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "5937330a-6bf0-48c4-a4ac-f412780b1fb7",
+            "sortNum": 250000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllCatypeServer",
+            "url": "http://localhost:3001/catypeserver/",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:20.066Z",
+            "created": "2022-01-28T22:49:09.406Z",
+            "_id": "9fb93f02-c9b1-4b1c-95fd-76ba12dd99e8",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "a6b92084-ab8e-4be3-bb05-55e0c3baaa6d",
+            "sortNum": 260000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getCatQualityById",
+            "url": "http://localhost:3001/catquality/",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:22.265Z",
+            "created": "2022-01-28T22:12:07.630Z",
+            "_id": "2ec7e762-0140-4eae-a624-a8517d31f5f6",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "6c8e5dba-8f20-46b6-affa-2bdcbdfc98ad",
+            "sortNum": 260000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getCatypeContentById",
+            "url": "http://localhost:3001/catypecontent/1",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:21.155Z",
+            "created": "2022-01-28T22:26:19.594Z",
+            "_id": "b960ea28-42c9-4c6e-b719-c4f6d9fd1aac",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "5937330a-6bf0-48c4-a4ac-f412780b1fb7",
+            "sortNum": 260000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getCatypeServerById",
+            "url": "http://localhost:3001/catypeserver/2",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:20.069Z",
+            "created": "2022-01-28T22:49:09.406Z",
+            "_id": "e473947e-7766-43df-8663-9d2c21a48c78",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "806d5890-34ae-40b1-bb77-d0082ed5305a",
+            "sortNum": 260000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getCatPlataformById",
+            "url": "http://localhost:3001/catplataform/3",
+            "method": "GET",
+            "modified": "2022-01-31T18:02:23.904Z",
+            "created": "2022-01-28T22:01:42.365Z",
+            "_id": "ff7e09a6-e23d-48c1-b5b8-62b978c790d8",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "6c8e5dba-8f20-46b6-affa-2bdcbdfc98ad",
+            "sortNum": 270000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertCatypeContent",
+            "url": "http://localhost:3001/catypecontent",
+            "method": "POST",
+            "modified": "2022-01-31T18:02:21.235Z",
+            "created": "2022-01-28T22:26:19.594Z",
+            "_id": "76b89936-e496-4fba-b68d-91b8010754ec",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_TYPE_CONTENT\": \"EVENTS\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "5937330a-6bf0-48c4-a4ac-f412780b1fb7",
+            "sortNum": 270000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertCatypeServer",
+            "url": "http://localhost:3001/catypeserver/",
+            "method": "POST",
+            "modified": "2022-01-31T18:02:20.144Z",
+            "created": "2022-01-28T22:49:09.406Z",
+            "_id": "8224baee-bfe6-4e08-a460-e2b5b81697a2",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_TYPE_SERVER\": \"EVENTS\",\n    \"URL\": \"http//www.url.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "806d5890-34ae-40b1-bb77-d0082ed5305a",
+            "sortNum": 270000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertCatPlataform",
+            "url": "http://localhost:3001/catplataform/",
+            "method": "POST",
+            "modified": "2022-01-31T18:02:24.072Z",
+            "created": "2022-01-28T22:02:41.908Z",
+            "_id": "91ba7aea-e82b-4ae8-9511-d010fdd526ff",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_PLATAFORM\": \"FIRE TV\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "a6b92084-ab8e-4be3-bb05-55e0c3baaa6d",
+            "sortNum": 270000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertCatQuality",
+            "url": "http://localhost:3001/catquality",
+            "method": "POST",
+            "modified": "2022-01-31T18:02:22.416Z",
+            "created": "2022-01-28T22:12:07.631Z",
+            "_id": "cdc9c63a-6735-4792-bb23-08d5523089d6",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_QUALITY\": \"480P\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "5937330a-6bf0-48c4-a4ac-f412780b1fb7",
+            "sortNum": 280000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updateCatypeServer",
+            "url": "http://localhost:3001/catypeserver/5",
+            "method": "PUT",
+            "modified": "2022-01-31T18:02:20.203Z",
+            "created": "2022-01-28T22:49:09.406Z",
+            "_id": "061f2588-446d-407e-8edd-fbb2f31c26c0",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_TYPE_SERVER\": \"EVENTSsss\",\n    \"URL\": \"http//www.url.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "6c8e5dba-8f20-46b6-affa-2bdcbdfc98ad",
+            "sortNum": 280000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updateCatypeContent",
+            "url": "http://localhost:3001/catypecontent/6",
+            "method": "PUT",
+            "modified": "2022-01-31T18:02:21.285Z",
+            "created": "2022-01-28T22:26:19.594Z",
+            "_id": "7003a94b-18ad-49c7-9076-7de4536b672f",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_TYPE_CONTENT\": \"EVENTS\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "806d5890-34ae-40b1-bb77-d0082ed5305a",
+            "sortNum": 280000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updateCatPlataform",
+            "url": "http://localhost:3001/catplataform/3",
+            "method": "PUT",
+            "modified": "2022-01-31T18:02:24.122Z",
+            "created": "2022-01-28T22:04:13.114Z",
+            "_id": "8d97bacd-d1ae-4e45-8bd1-ef0def31a37e",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_PLATAFORM\": \"FIRE TVVV\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "a6b92084-ab8e-4be3-bb05-55e0c3baaa6d",
+            "sortNum": 280000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updateCatQuality",
+            "url": "http://localhost:3001/catquality/5",
+            "method": "PUT",
+            "modified": "2022-01-31T18:02:22.476Z",
+            "created": "2022-01-28T22:12:07.631Z",
+            "_id": "92df120b-848b-4710-a30c-8063e96f773b",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"NAME_QUALITY\": \"FIRE TVVV\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "5937330a-6bf0-48c4-a4ac-f412780b1fb7",
+            "sortNum": 290000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deleteCatypeServerById",
+            "url": "http://localhost:3001/catypeserver/5",
+            "method": "DELETE",
+            "modified": "2022-01-31T18:02:20.252Z",
+            "created": "2022-01-28T22:49:09.406Z",
+            "_id": "09f24e04-278a-437a-bcf9-4de7660d6c47",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "806d5890-34ae-40b1-bb77-d0082ed5305a",
+            "sortNum": 290000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deleteCatPlataform",
+            "url": "http://localhost:3001/catplataform/3",
+            "method": "DELETE",
+            "modified": "2022-01-31T18:02:24.189Z",
+            "created": "2022-01-28T22:05:11.315Z",
+            "_id": "a68e1a40-a427-425c-ad33-b61065a99ed6",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "6c8e5dba-8f20-46b6-affa-2bdcbdfc98ad",
+            "sortNum": 290000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deleteCatypeContent",
+            "url": "http://localhost:3001/catypecontent/6",
+            "method": "DELETE",
+            "modified": "2022-01-31T18:02:21.336Z",
+            "created": "2022-01-28T22:26:19.594Z",
+            "_id": "deac77d7-08f1-4fbd-89bd-878ba5c75f93",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "a6b92084-ab8e-4be3-bb05-55e0c3baaa6d",
+            "sortNum": 290000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deleteCatQuality",
+            "url": "http://localhost:3001/catquality/5",
+            "method": "DELETE",
+            "modified": "2022-01-31T18:02:22.525Z",
+            "created": "2022-01-28T22:12:07.631Z",
+            "_id": "ecb5a319-83a1-4501-bfaf-a368d6778189",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "21b10090-0ca3-4e7b-b1d1-634a1ed6064d",
+            "sortNum": 310000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertmovieEN",
+            "url": "http://localhost:3001/mtmovie/en/",
+            "method": "POST",
+            "modified": "2022-01-31T19:31:46.298Z",
+            "created": "2022-01-31T19:13:20.409Z",
+            "_id": "40578c4f-263b-4126-9d40-c64191d4b524",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"2\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"2\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkdfgdfgdddAAAAAAAAAAAAAAAbbbbbbbbbbbbbbAAAAkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "4b6505ff-70aa-40bf-8e21-fc6557b13292",
+            "sortNum": 310000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertmovieadult",
+            "url": "http://localhost:4000/mtmovie/adult/",
+            "method": "POST",
+            "modified": "2022-02-02T16:54:03.765Z",
+            "created": "2022-02-01T22:47:51.324Z",
+            "_id": "c2114aea-c6b7-4110-8df1-af7324590cad",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"XXX\",\n    \"BACK\": \"BACKXXX\",\n    \"POSTER\": \"POSTERXXX\",\n    \"YEAR\": \"2022\",\n    \"DURATION\": \"130m\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"URLXXX\",\n    \"SUBT\": \"SUBTXXX\",\n    \"SYNOPSIS\": \"SYNOPSISXXX\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "6ca22211-3814-4dd4-8490-9f3f23816ad5",
+            "sortNum": 310000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertmovieES",
+            "url": "http://localhost:3001/mtmoviees/",
+            "method": "POST",
+            "modified": "2022-01-31T19:14:02.634Z",
+            "created": "2022-01-31T18:03:45.250Z",
+            "_id": "f22967d7-791b-4d6b-abf1-06828dc139b5",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkdfgdfgdddAAAAAAAAAAAAAAAbbbbbbbbbbbbbbAAAAkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "21b10090-0ca3-4e7b-b1d1-634a1ed6064d",
+            "sortNum": 315000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updatemovieEN",
+            "url": "http://localhost:3001/mtmovie/en/9",
+            "method": "PUT",
+            "modified": "2022-01-31T19:45:39.768Z",
+            "created": "2022-01-31T19:13:20.409Z",
+            "_id": "6fbc8daa-43a9-4e4c-b501-83b9cfffb13d",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"2\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"2\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"açaa\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "6ca22211-3814-4dd4-8490-9f3f23816ad5",
+            "sortNum": 315000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updatemovieES",
+            "url": "http://localhost:3001/mtmoviees/8",
+            "method": "PUT",
+            "modified": "2022-01-31T19:14:02.693Z",
+            "created": "2022-01-31T18:03:45.250Z",
+            "_id": "778d70c2-5975-4503-970a-096079bc5c26",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkdfgdfgdddA121212AAAAAAAAAAAAAAAAAAkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "4b6505ff-70aa-40bf-8e21-fc6557b13292",
+            "sortNum": 315000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updatemovieadult",
+            "url": "http://localhost:4000/mtmovie/adult/1",
+            "method": "PUT",
+            "modified": "2022-02-02T17:22:04.778Z",
+            "created": "2022-02-01T22:47:51.324Z",
+            "_id": "bb20df9e-4122-41ed-ae94-a80c684e3a39",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"XXX\",\n    \"BACK\": \"BACKXXX\",\n    \"POSTER\": \"POSTERXXX\",\n    \"YEAR\": \"2022\",\n    \"DURATION\": \"130m\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"URLXXX\",\n    \"SUBT\": \"SUBTXXX\",\n    \"SYNOPSIS\": \"SYNOPSISXXX\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "6ca22211-3814-4dd4-8490-9f3f23816ad5",
+            "sortNum": 320000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deletemovieESById",
+            "url": "http://localhost:3001/mtmoviees/6",
+            "method": "DELETE",
+            "modified": "2022-01-31T19:14:02.753Z",
+            "created": "2022-01-31T18:03:45.250Z",
+            "_id": "34e0e517-c1d2-4d18-aecb-582327a98e61",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkdfgdfgdddAAAAAAAAAAAAAAAbbbbbbbbbbbbbbAAAAkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "21b10090-0ca3-4e7b-b1d1-634a1ed6064d",
+            "sortNum": 320000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deletemovieENById",
+            "url": "http://localhost:3001/mtmovie/en/9",
+            "method": "DELETE",
+            "modified": "2022-01-31T19:48:01.049Z",
+            "created": "2022-01-31T19:13:20.409Z",
+            "_id": "3953610b-6334-4bb0-b4bc-b92d55667543",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkdfgdfgdddAAAAAAAAAAAAAAAbbbbbbbbbbbbbbAAAAkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "4b6505ff-70aa-40bf-8e21-fc6557b13292",
+            "sortNum": 320000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deletemovieadultById",
+            "url": "http://localhost:4000/mtmovie/adult/1",
+            "method": "DELETE",
+            "modified": "2022-02-02T17:22:32.156Z",
+            "created": "2022-02-01T22:47:51.324Z",
+            "_id": "d85bffef-658a-4c9c-905a-f03f656347c3",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODQUALITY\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkdfgdfgdddAAAAAAAAAAAAAAAbbbbbbbbbbbbbbAAAAkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"DURATION\": \"130m\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"ASKPIN\": \"1\",\n    \"CODFORMATVIDEO\": \"1\",\n    \"URL\": \"sdfsdf\",\n    \"SUBT\": \"sdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf111111qqqqqqqqqq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "040ef256-90fe-4074-b914-463bdea554d8",
+            "sortNum": 330000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllTvShowsEN",
+            "url": "http://localhost:3001/mttvshows/en/",
+            "method": "GET",
+            "modified": "2022-01-31T20:35:12.461Z",
+            "created": "2022-01-31T20:34:39.602Z",
+            "_id": "58a9d30f-e5fa-45a6-bf31-e053d6739b60",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "e12c9c09-3c18-4977-b419-3bd75e1411c1",
+            "sortNum": 330000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getAllTvShowsES",
+            "url": "http://localhost:3001/mttvshows/es/",
+            "method": "GET",
+            "modified": "2022-01-31T22:22:40.836Z",
+            "created": "2022-01-31T21:08:29.867Z",
+            "_id": "89d4162f-8d30-448d-89a3-946295daa7ed",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "040ef256-90fe-4074-b914-463bdea554d8",
+            "sortNum": 335000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getTvShowsENById ",
+            "url": "http://localhost:3001/mttvshows/en/17",
+            "method": "GET",
+            "modified": "2022-02-01T17:33:23.805Z",
+            "created": "2022-01-31T20:35:17.762Z",
+            "_id": "f1985d71-e9d8-4d1e-85b0-3ae8d9c3ebe9",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "040ef256-90fe-4074-b914-463bdea554d8",
+            "sortNum": 337500,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertTvShowEN",
+            "url": "http://localhost:3001/mttvshows/en/",
+            "method": "POST",
+            "modified": "2022-02-01T17:33:29.767Z",
+            "created": "2022-01-31T20:36:02.435Z",
+            "_id": "f0f95e4e-3e48-48bb-9218-0a7c80901b12",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"2\",\n    \"CODCATEGORY\": \"2\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkdfgdfgdddAAAAAAAAAAAAAAAbbbbbbbbbbbbbbAAAAkkkk\",\n    \"TITLE_LATIN\": \"asdkkdfgdfgdddAAAAAAAAAAAAAAAbbbbbbbbbbbbbbAAAAkkkk\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf11qq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "040ef256-90fe-4074-b914-463bdea554d8",
+            "sortNum": 338750,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updateTvShowEN",
+            "url": "http://localhost:3001/mttvshows/en/17",
+            "method": "PUT",
+            "modified": "2022-02-01T17:33:32.100Z",
+            "created": "2022-01-31T20:56:15.879Z",
+            "_id": "6e548eed-2b03-4d5e-a9e4-20dcac8ff7f6",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"2\",\n    \"CODCATEGORY\": \"2\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkdfgdfgddd\",\n    \"TITLE_LATIN\": \"asdkkdfgd\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf11qq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "e12c9c09-3c18-4977-b419-3bd75e1411c1",
+            "sortNum": 340000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getTvShowsESById ",
+            "url": "http://localhost:3001/mttvshows/es/23",
+            "method": "GET",
+            "modified": "2022-01-31T22:24:31.913Z",
+            "created": "2022-01-31T21:08:29.867Z",
+            "_id": "86f24570-8e05-44b0-95c5-e76810a3c576",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "040ef256-90fe-4074-b914-463bdea554d8",
+            "sortNum": 340000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deleteTvShowEN",
+            "url": "http://localhost:3001/mttvshows/en/17",
+            "method": "DELETE",
+            "modified": "2022-01-31T21:14:49.556Z",
+            "created": "2022-01-31T21:14:25.969Z",
+            "_id": "a8ecb261-25c5-4151-818d-eff4f6e9213b",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "e12c9c09-3c18-4977-b419-3bd75e1411c1",
+            "sortNum": 350000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertTvShowES",
+            "url": "http://localhost:3001/mttvshows/es/",
+            "method": "POST",
+            "modified": "2022-01-31T22:14:02.437Z",
+            "created": "2022-01-31T21:08:29.867Z",
+            "_id": "871e5aed-afb7-4715-8c8d-ea31800d0d83",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"1\",\n    \"CODCATEGORY\": \"1\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"asdkkdfgdfgdddAAAAAAAAAAAA\",\n    \"TITLE_LATIN\": \"asdkkdfgdfgdddAAAAAAAAAAAA\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf11qq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "e12c9c09-3c18-4977-b419-3bd75e1411c1",
+            "sortNum": 360000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updateTvShowES",
+            "url": "http://localhost:3001/mttvshows/es/23",
+            "method": "PUT",
+            "modified": "2022-01-31T22:24:24.221Z",
+            "created": "2022-01-31T21:08:29.867Z",
+            "_id": "662e3127-ce9c-4051-9af9-9087f0af5edd",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"CODAUDIO\": \"2\",\n    \"CODCATEGORY\": \"2\",\n    \"CODUSER\": \"1\",\n    \"TITLE\": \"11111111111111111\",\n    \"TITLE_LATIN\": \"111111111111111111\",\n    \"BACK\": \"asd\",\n    \"POSTER\": \"asd\",\n    \"YEAR\": \"2010\",\n    \"CLASIF\": \"asd2\",\n    \"COUNTRY\": \"asd\",\n    \"CALIF\": \"10%\",\n    \"DIRECTOR\": \"sdfsdf\",\n    \"CAST\": \"sdfsdfsdfsdf\",\n    \"SYNOPSIS\": \"sdfsdf11qq\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "e12c9c09-3c18-4977-b419-3bd75e1411c1",
+            "sortNum": 370000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deleteTvShowES",
+            "url": "http://localhost:3001/mttvshows/es/19",
+            "method": "DELETE",
+            "modified": "2022-01-31T22:18:54.176Z",
+            "created": "2022-01-31T22:09:05.463Z",
+            "_id": "bc6de98c-82b7-49ee-ad27-c6b647ec9139",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "6bb89461-19eb-44e9-b63e-abe87af35e03",
+            "sortNum": 380000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getChapterByTvShows",
+            "url": "http://localhost:3001/mttvshowschapter/tvshow/20",
+            "method": "GET",
+            "modified": "2022-02-02T17:28:42.833Z",
+            "created": "2022-02-01T17:34:57.474Z",
+            "_id": "25ea9df3-8924-483a-828d-890c8991f639",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "6bb89461-19eb-44e9-b63e-abe87af35e03",
+            "sortNum": 390000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "insertchapter",
+            "url": "http://localhost:3001/mttvshowschapter/",
+            "method": "POST",
+            "modified": "2022-02-02T17:28:42.836Z",
+            "created": "2022-02-01T18:13:40.186Z",
+            "_id": "4dc6b22e-8a46-4add-b802-7c3e2bc3af05",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\r\n    \"COD_CONTENT\": 20,\r\n    \"COD_FORMAT_VIDEO\": 1,\r\n    \"COD_USER\": 1,\r\n    \"NAME_CHAPTER\": \"AAAA\",\r\n    \"NUMBER_SEASON\": 1,\r\n    \"NUMBER_CHAPTER\": 5,\r\n    \"SYNOSIS\": \"AAAA\",\r\n    \"SUPTITLE\": \"AAA\",\r\n    \"URL\": \"AAAA\"\r\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "6bb89461-19eb-44e9-b63e-abe87af35e03",
+            "sortNum": 390000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "getChapterByCod",
+            "url": "http://localhost:3001/mttvshowschapter/chapter/1",
+            "method": "GET",
+            "modified": "2022-02-02T17:28:42.920Z",
+            "created": "2022-02-01T17:35:42.877Z",
+            "_id": "943a3f05-eee1-487c-b9af-486cff111534",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "6bb89461-19eb-44e9-b63e-abe87af35e03",
+            "sortNum": 400000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "updatechapter",
+            "url": "http://localhost:3001/mttvshowschapter/1",
+            "method": "PUT",
+            "modified": "2022-02-02T17:28:42.981Z",
+            "created": "2022-02-01T18:55:31.328Z",
+            "_id": "0a6649fe-0d79-4dd7-a858-d3b9762e57cc",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\r\n    \"COD_CONTENT\": \"20\",\r\n    \"NAME_CHAPTER\": \"NAME_CHAPTER\",\r\n    \"NUMBER_SEASON\": \"2\",\r\n    \"NUMBER_CHAPTER\": \"1\",\r\n    \"COD_FORMAT_VIDEO\": \"1\",\r\n    \"COD_USER\": \"1\",\r\n    \"SYNOSIS\": \"SYNOSIS\",\r\n    \"URL\": \"URL\",\r\n    \"SUPTITLE\": \"SUPTITLE\"\r\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "6bb89461-19eb-44e9-b63e-abe87af35e03",
+            "sortNum": 410000,
+            "headers": [{
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ],
+            "colId": "a03a7898-a27b-46f3-bb79-9ef698fd1290",
+            "name": "deleteChapter",
+            "url": "http://localhost:3001/mttvshowschapter/1",
+            "method": "DELETE",
+            "modified": "2022-02-02T17:28:43.032Z",
+            "created": "2022-02-01T19:11:27.803Z",
+            "_id": "e5eb8a86-0b82-463c-9c23-e96b262b0885",
+            "params": [],
+            "tests": []
+        }
+    ]
+}

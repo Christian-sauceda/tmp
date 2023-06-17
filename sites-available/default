@@ -1,0 +1,108 @@
+server {
+    listen 80;
+
+    location /images/imgs {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /cataudio {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /catcategory {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /catepgchannel {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /catformatvideo {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /catplataform {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /catquality {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /catypecontent {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /catypeserver {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /mtmovie/es {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /mtmovie/en {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /mtmovie/adult {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /mtevent {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /mttvshows/en {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /mttvshows/es {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /mttvshowschapter {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /tvlive/es {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /tvlive/en {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /tvlive/inter {
+        proxy_pass http://localhost:3001;
+    }
+
+    location /login {
+    	proxy_pass http://localhost:3001;
+    }
+
+    location /users {
+    	proxy_pass http://localhost:3001;
+    }
+
+    location /registro {
+    	proxy_pass http://localhost:3001;
+    }
+
+    location /confirmar {
+	proxy_pass http://localhost:3001;
+    }
+
+    location /perfil {
+	proxy_pass http://localhost:3001;
+    }
+
+    location / {
+        proxy_pass http://localhost:4173;
+	    proxy_http_version 1.1;
+    	    proxy_set_header Upgrade $http_upgrade;
+   	    proxy_set_header Connection "Upgrade";
+            proxy_set_header Host $host;
+    }
+}
+
