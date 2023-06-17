@@ -90,8 +90,8 @@ function App() {
                           <Route path="*" element={<NotFound />} />
                           <Route path="/" element={<AuthLayout />}>
                             <Route index element={<Login />} />
-                            <Route path="olvide-password" element={<OlvidePassword />} />
-                            <Route path="olvide-password/:token" element={<NuevoPassword />} />
+                            <Route path="olvidepassword" element={<OlvidePassword />} />
+                            <Route path="olvidepassword/:token" element={<NuevoPassword />} />
                             <Route path="confirm/:id" element={<ConfirmarCuenta />} />
                           </Route>
 
