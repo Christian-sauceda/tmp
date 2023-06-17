@@ -97,6 +97,10 @@ server {
 	proxy_pass http://localhost:3001;
     }
 
+    location /olvide-password {
+    proxy_pass http://localhost:3001;
+    }
+
     location / {
         proxy_pass http://localhost:4173;
 	    proxy_http_version 1.1;
