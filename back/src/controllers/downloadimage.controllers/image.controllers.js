@@ -26,8 +26,6 @@ const imageController = {
                     const pathDefault = path.resolve(__dirname, `../../../images/imgs/movieses/back/no-image.jpg`);
                     return res.sendFile(pathDefault);
                 }
-
-                
             }
             
             res.sendFile(pathImage);
