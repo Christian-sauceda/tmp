@@ -1,0 +1,15 @@
+server {
+    listen 80;
+
+    location ~ ^/(images/imgs|cataudio|catcategory|catepgchannel|catformatvideo|catplataform|catquality|catypecontent|catypeserver|mtmovie/.*|mtevent|mttvshows/.*|mttvshowschapter|tvlive/.*|login|users|registro|confirmar|perfil|olvide-password) {
+        proxy_pass http://localhost:3001;
+    }
+
+    location / {
+        proxy_pass http://localhost:4173;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+    }
+}
