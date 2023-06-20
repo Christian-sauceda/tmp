@@ -17,6 +17,7 @@
     "axios": "^0.26.0",
     "dateformat": "^5.0.3",
     "mui-datatables": "^3.8.5",
+    "phantomjs-prebuilt": "^2.1.16",
     "react": "^17.0.2",
     "react-data-table-component": "^7.4.7",
     "react-dom": "^17.0.2",
