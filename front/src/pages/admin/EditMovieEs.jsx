@@ -69,6 +69,7 @@ export default function AddMovieEs() {
     const [URL, setURL] = useState("");
     const [SYNOPSIS, setSYNOPSIS] = useState("");
     const { COD } = useParams();
+    const [TITLE_LATIN, setTITLE_LATIN] = useState("");
 
     const [selectcategoria, setSelectcategoria] = useState([]);
     const [selectcalidad, setSelectcalidad] = useState([]);
@@ -181,7 +182,7 @@ export default function AddMovieEs() {
                     Authorization: `Bearer ${token}`
                 }
             }
-            const datos = { CODAUDIO, CODQUALITY, CODCATEGORY, CODUSER, TITLE, BACK, POSTER, YEAR, CLASIF, DURATION, COUNTRY, CALIF, DIRECTOR, CAST, ASKPIN, CODFORMATVIDEO, URL, SYNOPSIS, COD_CONTENIDO }
+            const datos = { CODAUDIO, CODQUALITY, CODCATEGORY, CODUSER, TITLE, BACK, POSTER, YEAR, CLASIF, DURATION, COUNTRY, CALIF, DIRECTOR, CAST, ASKPIN, CODFORMATVIDEO, URL, SYNOPSIS, COD_CONTENIDO, TITLE_LATIN }
             await clienteAxios.put(`/mtmovie/es/${COD}/${import.meta.env.VITE_ID_MOVIES_ES}`, datos, config)
             setAlerta({
                 msg: 'Película en Español ha sido Editada Correctamente',
@@ -248,6 +249,7 @@ export default function AddMovieEs() {
             setCAST(expediente.cast)
             setCLASIF(expediente.rated)
             setCOUNTRY(expediente.country)
+            setTITLE_LATIN(expediente.original_title)
         }
     }, [expediente]);
 

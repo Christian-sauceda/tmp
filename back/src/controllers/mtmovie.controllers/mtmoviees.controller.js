@@ -98,7 +98,7 @@ export const createmoviees = (req, res) => {
 export const updatemovieesById = (req, res) => {
     const {
         CODAUDIO, CODQUALITY, CODCATEGORY, CODUSER, TITLE, BACK, POSTER, YEAR, CLASIF, DURATION,
-        COUNTRY, CALIF, DIRECTOR, CAST, ASKPIN, CODFORMATVIDEO, URL, SYNOPSIS } = req.body;
+        COUNTRY, CALIF, DIRECTOR, CAST, ASKPIN, CODFORMATVIDEO, URL, SYNOPSIS,  TITLE_LATIN} = req.body;
     const { COD, ID } = req.params;
 
     const urlimgback = req.body.BACK
@@ -121,9 +121,9 @@ export const updatemovieesById = (req, res) => {
         console.log('done');
     });
 
-    mysqlconnection.query("CALL PROC_UPD_MOVIE_ES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-        [CODAUDIO, CODQUALITY, CODCATEGORY, CODUSER, TITLE, urlback, urlposter, YEAR, CLASIF, DURATION, COUNTRY, CALIF,
-            DIRECTOR, CAST, ASKPIN, CODFORMATVIDEO, URL, SYNOPSIS, COD, ID
+    mysqlconnection.query("CALL PROC_UPD_MOVIE_ES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        [CODAUDIO, CODQUALITY, CODCATEGORY, CODUSER, TITLE_LATIN, urlback, urlposter, YEAR, CLASIF, DURATION, COUNTRY, CALIF,
+            DIRECTOR, CAST, ASKPIN, CODFORMATVIDEO, URL, SYNOPSIS, COD, ID, TITLE
         ],
         (err, rows, fields) => {
             if (!err) {

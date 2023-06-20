@@ -169,7 +169,6 @@ export default function AddMovieEs() {
                         runtime: response.data.Runtime.slice(0, -3),
                         country: response.data.Country,
                     })
-                    setTITLE_LATIN(response.data.Title)
                 })
                 .catch(err => console.log(err));
         }
@@ -189,6 +188,7 @@ export default function AddMovieEs() {
             setCAST(expediente.cast)
             setCLASIF(expediente.rated)
             setCOUNTRY(expediente.country)
+            setTITLE_LATIN(expediente.original_title)
         }
     }, [expediente]);
 
