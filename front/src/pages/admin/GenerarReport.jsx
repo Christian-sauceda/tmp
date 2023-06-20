@@ -334,6 +334,7 @@ export default function AddMovieEs() {
                                     <button
                                         type="submit"
                                         className="bg-green-500 hover:bg-green-600 focus:ring-green-500 focus:ring-offset-green-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-md py-2 px-4"
+                                        disabled={true}
                                     >
                                         Generar reporte
                                     </button>
