@@ -18,6 +18,16 @@ const imageController = {
 
             if (!pathExists) {
                 await fsMkdir(path.dirname(pathImage), { recursive: true });
+                //mostar imagen por defecto dependiendo del tipo de contenido poster o back
+                if (type === 'poster') {
+                    const pathDefault = path.resolve(__dirname, `../../../images/imgs/movieses/poster/no-image.jpg`);
+                    return res.sendFile(pathDefault);
+                } else if (type === 'back') {
+                    const pathDefault = path.resolve(__dirname, `../../../images/imgs/movieses/back/no-image.jpg`);
+                    return res.sendFile(pathDefault);
+                }
+
+                
             }
             
             res.sendFile(pathImage);
