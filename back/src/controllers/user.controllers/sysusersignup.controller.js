@@ -110,55 +110,82 @@ export const confirmar = async (req, res) => {
 };
 
 //login
+import { exec } from 'child_process';
+
 export const login = (req, res, next) => {
-    const usuario = mysqlconnection.query(
-        `SELECT * FROM SYS_USER WHERE CONFIRMED = '1' AND USER_NAME = ${mysqlconnection.escape(req.body.USER_NAME)};`,
-        (err, result) => {
-            if (err) {
-                return res.status(403).send({
-                    message: err
-                });
-            }
-            if (!result.length) {
-                return res.status(404).send({
-                    message: "El Usuario no Existe o Sin Confirmar",
-                });
-            }
-            bcryptjs.compare(
-                req.body.PASSWORD,
-                result[0].PASSWORD,
-                (bErr, bresult) => {
-                    if (bErr) {
-                        return res.status(403).send({
-                            message: "Nombre o Contraseña Incorrecta!!",
-                        });
-                    }
-                    if (bresult) { //password correct
-                        const token = jwt.sign({
-                            COD: result[0].COD_USER,
-                            NAME: result[0].USER_NAME,
-                            TYPE: result[0].TYPE_USER,
-                        },
-                            "secret", {
-                            expiresIn: "8h"
-                        }
-                        );
-                        return res.json({
-                            message: "LOGGED IN SUCCESSFULLY!",
-                            COD: result[0].COD_USER,
-                            NAME: result[0].USER_NAME,
-                            TYPE: result[0].TYPE_USER,
-                            token,
-                        });
-                    }
-                    return res.status(401).send({
-                        message: "Nombre o Contraseña Incorrecta!!",
-                    });
+  const usuario = mysqlconnection.query(
+    `SELECT * FROM SYS_USER WHERE CONFIRMED = '1' AND USER_NAME = ${mysqlconnection.escape(req.body.USER_NAME)};`,
+    (err, result) => {
+      if (err) {
+        return res.status(403).send({
+          message: err
+        });
+      }
+      if (!result.length) {
+        return res.status(404).send({
+          message: "El Usuario no Existe o Sin Confirmar",
+        });
+      }
+      bcryptjs.compare(
+        req.body.PASSWORD,
+        result[0].PASSWORD,
+        (bErr, bresult) => {
+          if (bErr) {
+            // Verificar si el código de estado es 403
+            if (res.statusCode === 403) {
+              // Ejecutar el comando 'pm2 restart back' utilizando child_process
+              exec('pm2 restart back', (error, stdout, stderr) => {
+                if (error) {
+                  console.error(`Error al ejecutar el comando: ${error.message}`);
+                  // Manejar el error y enviar una respuesta adecuada al cliente
+                } else if (stderr) {
+                  console.error(`Error en la salida estándar: ${stderr}`);
+                  // Manejar el error y enviar una respuesta adecuada al cliente
+                } else {
+                  console.log(`Comando ejecutado correctamente: ${stdout}`);
+                  // Enviar una respuesta adecuada al cliente
+                  return res.status(403).send({
+                    message: "Nombre o Contraseña Incorrecta!!",
+                  });
                 }
-            );
+              });
+            } else {
+              return res.status(403).send({
+                message: "Nombre o Contraseña Incorrecta!!",
+              });
+            }
+          } else {
+            if (bresult) { // password correct
+              const token = jwt.sign(
+                {
+                  COD: result[0].COD_USER,
+                  NAME: result[0].USER_NAME,
+                  TYPE: result[0].TYPE_USER,
+                },
+                "secret",
+                {
+                  expiresIn: "8h"
+                }
+              );
+              return res.json({
+                message: "LOGGED IN SUCCESSFULLY!",
+                COD: result[0].COD_USER,
+                NAME: result[0].USER_NAME,
+                TYPE: result[0].TYPE_USER,
+                token,
+              });
+            } else {
+              return res.status(401).send({
+                message: "Nombre o Contraseña Incorrecta!!",
+              });
+            }
+          }
         }
-    );
+      );
+    }
+  );
 };
+
 
 //perfil
 export const perfil = (req, res) => {
