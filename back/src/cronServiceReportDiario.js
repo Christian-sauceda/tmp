@@ -93,4 +93,6 @@ const startCronJobDiario = () => {
 });
 };
 
-module.exports = startCronJobDiario;
+module.exports = {
+    startCronJobDiario: startCronJobDiario
+  };

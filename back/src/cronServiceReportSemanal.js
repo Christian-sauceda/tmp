@@ -93,4 +93,6 @@ const startCronJobSemanal = () => {
   });
 };
 
-module.exports = startCronJobSemanal;
+module.exports = {
+  startCronJobSemanal: startCronJobSemanal
+};
