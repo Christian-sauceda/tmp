@@ -6,7 +6,7 @@ const mysqlconnection = require("../src/database");
 var cron = require("node-cron");
 
 const startCronJobSemanal = () => {
-  cron.schedule("0 00 17 * * 1-5", () => {
+  cron.schedule("0 00 12 * * 6", () => {
     // ENVIA EMAIAUTOMATICO
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -34,7 +34,7 @@ const startCronJobSemanal = () => {
         SELECT COUNT(DISTINCT c.COD_CONTENT) AS total_contents, COUNT(DISTINCT cs.COD_CHAPTERS_SERIES) AS total_chapters FROM MT_CONTENTS c INNER JOIN MT_CHAPTERS_SERIES cs ON c.COD_CONTENT = cs.COD_CONTENT WHERE c.COD_CAT_TYPE_CONTENT = ${process.env.ID_SERIESES} AND cs.DATE_ADD >= NOW() - INTERVAL 6 DAY;
         SELECT COUNT(DISTINCT c.COD_CONTENT) AS total_contents, COUNT(DISTINCT cs.COD_CHAPTERS_SERIES) AS total_chapters FROM MT_CONTENTS c INNER JOIN MT_CHAPTERS_SERIES cs ON c.COD_CONTENT = cs.COD_CONTENT WHERE c.COD_CAT_TYPE_CONTENT = ${process.env.ID_SERIESEN} AND cs.DATE_ADD >= NOW() - INTERVAL 6 DAY;
         `,
-      [1, 2],
+      [1, 2], 
       async (err, result) => {
         if (!err) {
           // Extract the necessary data from the result
@@ -90,7 +90,7 @@ const startCronJobSemanal = () => {
   }, {
     scheduled: true,
     timezone: "America/Tegucigalpa",
-});
+  });
 };
 
-startCronJobSemanal();
+module.exports = startCronJobSemanal;
