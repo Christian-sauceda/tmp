@@ -5,8 +5,34 @@ require("dotenv").config();
 const mysqlconnection = require("../src/database");
 var cron = require("node-cron");
 
+// Function to extract necessary data from the result
+function extractDataFromResult(result) {
+  const data = {
+    //agregar diseño
+    
+
+
+    moviesES: result[0], // Result of the first SQL query for movies in Spanish
+    moviesEN: result[1], // Result of the second SQL query for movies in English
+    moviesAD: result[2], // Result of the third SQL query for adult movies
+    seriesES: result[3], // Result of the fourth SQL query for series in Spanish
+    seriesEN: result[4], // Result of the fifth SQL query for series in English
+    sports: result[5], // Result of the sixth SQL query for sports events
+    totalMoviesES: result[6][0].total, // Total count of movies in Spanish
+    totalMoviesEN: result[7][0].total, // Total count of movies in English
+    totalMoviesAD: result[8][0].total, // Total count of adult movies
+    totalSports: result[9][0].total, // Total count of sports events
+    totalSeriesES: result[10][0].total_contents, // Total count of series in Spanish
+    totalChaptersES: result[10][0].total_chapters, // Total count of chapters in Spanish series
+    totalSeriesEN: result[11][0].total_contents, // Total count of series in English
+    totalChaptersEN: result[11][0].total_chapters, // Total count of chapters in English series
+  };
+
+  return data;
+}
+
 const startCronJobDiario = () => {
-  cron.schedule("0 00 17 * * 1-5", () => {
+  cron.schedule("0 45 10 * * 1-5", () => {
     // ENVIA EMAIAUTOMATICO
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -42,7 +68,7 @@ const startCronJobDiario = () => {
 
           // Create a temporary HTML file
           const htmlFilename = `report_${Date.now()}.html`;
-          fs.writeFileSync(htmlFilename, data);
+          fs.writeFileSync(htmlFilename, JSON.stringify(data));
 
           try {
             // Launch Puppeteer and create a new page
@@ -90,9 +116,9 @@ const startCronJobDiario = () => {
   }, {
     scheduled: true,
     timezone: "America/Tegucigalpa",
-});
+  });
 };
 
 module.exports = {
-    startCronJobDiario: startCronJobDiario
-  };
+  startCronJobDiario: startCronJobDiario
+};
