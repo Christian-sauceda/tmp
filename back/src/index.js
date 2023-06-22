@@ -1,7 +1,7 @@
 import app from "./app";
 require("dotenv").config();
-const startCronJobSemanal = require("./cronServiceReportSemanal");
-const startCronJobDiario = require("./cronServiceReportDiario");
+const { startCronJobSemanal } = require("./cronServiceReportSemanal");
+const { startCronJobDiario } = require("./cronServiceReportDiario");
 
 
 let port = process.env.PORT;
