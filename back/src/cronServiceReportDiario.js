@@ -8,10 +8,6 @@ var cron = require("node-cron");
 // Function to extract necessary data from the result
 function extractDataFromResult(result) {
   const data = {
-    //agregar diseño
-
-
-
     moviesES: result[0], // Result of the first SQL query for movies in Spanish
     moviesEN: result[1], // Result of the second SQL query for movies in English
     moviesAD: result[2], // Result of the third SQL query for adult movies
@@ -72,7 +68,7 @@ const startCronJobDiario = () => {
 
           try {
             // Launch Puppeteer and create a new page
-            const browser = await puppeteer.launch({ headless: "new" });
+            const browser = await puppeteer.launch;
             const page = await browser.newPage();
 
             var moviees = JSON.stringify(result[0]);
