@@ -55,7 +55,7 @@ const startCronJobDiario = () => {
       SELECT COUNT(t1.TITLE) AS total FROM MT_CONTENTS t1 WHERE upload_date BETWEEN DATE_SUB(NOW(), INTERVAL 24 HOUR) AND NOW() AND t1.COD_CAT_TYPE_CONTENT = ${process.env.ID_SPORTS};
       SELECT c.TITLE AS total_contents, COUNT(cs.COD_CHAPTERS_SERIES) AS total_chapters FROM MT_CONTENTS c INNER JOIN MT_CHAPTERS_SERIES cs ON c.COD_CONTENT = cs.COD_CONTENT WHERE c.COD_CAT_TYPE_CONTENT= ${process.env.ID_SERIESES} AND cs.COD_CAT_TYPE_CONTENT = ${process.env.ID_CHAPTERSERIESES};
       SELECT c.TITLE AS total_contents, COUNT(cs.COD_CHAPTERS_SERIES) AS total_chapters FROM MT_CONTENTS c INNER JOIN MT_CHAPTERS_SERIES cs ON c.COD_CONTENT = cs.COD_CONTENT WHERE c.COD_CAT_TYPE_CONTENT= ${process.env.ID_SERIESEN} AND cs.COD_CAT_TYPE_CONTENT = ${process.env.ID_CHAPTERSERIESEN};
-      `,
+      `,[1, 2],
       async (error, result) => {
         if (error) {
           console.error("Error en la consulta MySQL:", error);
