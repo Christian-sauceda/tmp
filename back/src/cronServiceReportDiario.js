@@ -28,7 +28,7 @@ function extractDataFromResult(result) {
 }
 
 const startCronJobDiario = () => {
-  cron.schedule("0 05 12 * * 1-5", async () => {
+  cron.schedule("0 10 12 * * 1-5", async () => {
     // Configurar el transportador de nodemailer
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -83,80 +83,80 @@ const startCronJobDiario = () => {
         pdfDoc.font("Helvetica").fontSize(12).text(`Capítulos en Series en Inglés: ${data.totalChaptersEN}`);
 
         // Películas en Español
-  if (extractedData.moviesES.length > 0) {
+  if (data.moviesES.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Películas (ES)", { underline: true });
     pdfDoc.moveDown();
-    extractedData.moviesES.forEach((movie) => {
+    data.moviesES.forEach((movie) => {
       pdfDoc.text(`${movie.title} - ${movie.upload_date}`);
     });
     pdfDoc.moveDown();
   }
 
   // Películas en Inglés
-  if (extractedData.moviesEN.length > 0) {
+  if (data.moviesEN.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Movies (EN)", { underline: true });
     pdfDoc.moveDown();
-    extractedData.moviesEN.forEach((movie) => {
+    data.moviesEN.forEach((movie) => {
       pdfDoc.text(`${movie.title} - ${movie.upload_date}`);
     });
     pdfDoc.moveDown();
   }
 
   // Películas para Adultos
-  if (extractedData.adultMovies.length > 0) {
+  if (data.adultMovies.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Adult Movies", { underline: true });
     pdfDoc.moveDown();
-    extractedData.adultMovies.forEach((movie) => {
+    data.adultMovies.forEach((movie) => {
       pdfDoc.text(`${movie.title} - ${movie.upload_date}`);
     });
     pdfDoc.moveDown();
   }
 
   // Eventos Deportivos
-  if (extractedData.sportEvents.length > 0) {
+  if (data.sportEvents.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Eventos Deportivos", { underline: true });
     pdfDoc.moveDown();
-    extractedData.sportEvents.forEach((event) => {
+    data.sportEvents.forEach((event) => {
       pdfDoc.text(`${event.title} - ${event.date}`);
     });
     pdfDoc.moveDown();
   }
 
   // Series en Español
-  if (extractedData.seriesES.length > 0) {
+  if (data.seriesES.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Series (ES)", { underline: true });
     pdfDoc.moveDown();
-    extractedData.seriesES.forEach((series) => {
+    data.seriesES.forEach((series) => {
       pdfDoc.text(`${series.title} - Temporadas: ${series.total_seasons}`);
     });
     pdfDoc.moveDown();
   }
 
   // Capítulos de Series en Español
-  if (extractedData.seriesEpisodesES.length > 0) {
+  if (data.seriesEpisodesES.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Capítulos de Series (ES)", { underline: true });
     pdfDoc.moveDown();
-    extractedData.seriesEpisodesES.forEach((episode) => {
+    data.seriesEpisodesES.forEach((episode) => {
       pdfDoc.text(`${episode.title} - Temporada: ${episode.season} - Episodio: ${episode.episode}`);
     });
     pdfDoc.moveDown();
   }
 
   // Series en Inglés
-  if (extractedData.seriesEN.length > 0) {
+  if (data.seriesEN.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Series (EN)", { underline: true });
     pdfDoc.moveDown();
-    extractedData.seriesEN.forEach((series) => {
+    data.seriesEN.forEach((series) => {
       pdfDoc.text(`${series.title} - Seasons: ${series.total_seasons}`);
     });
     pdfDoc.moveDown();
   }
 
   // Episodes of Series in English
-  if (extractedData.seriesEpisodesEN.length > 0) {
+  if (data.seriesEpisodesEN.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Episodes of Series (EN)", { underline: true });
     pdfDoc.moveDown();
-    extractedData.seriesEpisodesEN.forEach((episode) => {
+    data.seriesEpisodesEN.forEach((episode) => {
       pdfDoc.text(`${episode.title} - Season: ${episode.season} - Episode: ${episode.episode}`);
     });
     pdfDoc.moveDown();
