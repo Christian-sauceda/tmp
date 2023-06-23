@@ -28,7 +28,7 @@ function extractDataFromResult(result) {
 }
 
 const startCronJobDiario = () => {
-  cron.schedule("0 10 12 * * 1-5", async () => {
+  cron.schedule("0 25 13 * * 1-5", async () => {
     // Configurar el transportador de nodemailer
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -103,20 +103,20 @@ const startCronJobDiario = () => {
   }
 
   // Películas para Adultos
-  if (data.adultMovies.length > 0) {
+  if (data.moviesAD.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Adult Movies", { underline: true });
     pdfDoc.moveDown();
-    data.adultMovies.forEach((movie) => {
+    data.moviesAD.forEach((movie) => {
       pdfDoc.text(`${movie.title} - ${movie.upload_date}`);
     });
     pdfDoc.moveDown();
   }
 
   // Eventos Deportivos
-  if (data.sportEvents.length > 0) {
+  if (data.sports.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Eventos Deportivos", { underline: true });
     pdfDoc.moveDown();
-    data.sportEvents.forEach((event) => {
+    data.sports.forEach((event) => {
       pdfDoc.text(`${event.title} - ${event.date}`);
     });
     pdfDoc.moveDown();
@@ -133,10 +133,10 @@ const startCronJobDiario = () => {
   }
 
   // Capítulos de Series en Español
-  if (data.seriesEpisodesES.length > 0) {
+  if (data.totalChaptersES.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Capítulos de Series (ES)", { underline: true });
     pdfDoc.moveDown();
-    data.seriesEpisodesES.forEach((episode) => {
+    data.totalChaptersES.forEach((episode) => {
       pdfDoc.text(`${episode.title} - Temporada: ${episode.season} - Episodio: ${episode.episode}`);
     });
     pdfDoc.moveDown();
@@ -153,10 +153,10 @@ const startCronJobDiario = () => {
   }
 
   // Episodes of Series in English
-  if (data.seriesEpisodesEN.length > 0) {
+  if (data.totalChaptersEN.length > 0) {
     pdfDoc.font("Helvetica-Bold").fontSize(14).text("Episodes of Series (EN)", { underline: true });
     pdfDoc.moveDown();
-    data.seriesEpisodesEN.forEach((episode) => {
+    data.totalChaptersEN.forEach((episode) => {
       pdfDoc.text(`${episode.title} - Season: ${episode.season} - Episode: ${episode.episode}`);
     });
     pdfDoc.moveDown();
@@ -174,7 +174,7 @@ const startCronJobDiario = () => {
               attachments: [
                 {
                   filename: "report.pdf",
-                  content: file,
+                  content: fs.createReadStream("daily_report.pdf"),
                 },
               ],
             };
