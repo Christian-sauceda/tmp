@@ -9,7 +9,7 @@ var cron = require("node-cron");
 function extractDataFromResult(result) {
   const data = {
     //agregar diseño
-    
+
 
 
     moviesES: result[0], // Result of the first SQL query for movies in Spanish
@@ -32,7 +32,7 @@ function extractDataFromResult(result) {
 }
 
 const startCronJobDiario = () => {
-  cron.schedule("0 45 10 * * 1-5", () => {
+  cron.schedule("0 19 21 * * 1-5", () => {
     // ENVIA EMAIAUTOMATICO
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -72,11 +72,195 @@ const startCronJobDiario = () => {
 
           try {
             // Launch Puppeteer and create a new page
-            const browser = await puppeteer.launch();
+            const browser = await puppeteer.launch({ headless: "new" });
             const page = await browser.newPage();
 
+            var moviees = JSON.stringify(result[0]);
+            var movieen = JSON.stringify(result[1]);
+            var moviead = JSON.stringify(result[2]);
+            var seriees = JSON.stringify(result[3]);
+            var serisen = JSON.stringify(result[4]);
+            var sport = JSON.stringify(result[5]);
+            var sumes = JSON.stringify(result[6]);
+            var sumen = JSON.stringify(result[7]);
+            var sumad = JSON.stringify(result[8]);
+            var sumsport = JSON.stringify(result[9]);
+            var sumseries = JSON.stringify(result[10]);
+            var sumserien = JSON.stringify(result[11]);
+          
+            let dateantes = new Date();
+            dateantes.setDate(dateantes.getDate() - 5);
+          
+            let dia = String(dateantes.getDate()).padStart(2, '0');
+            let mes = String(dateantes.getMonth() + 1).padStart(2, '0');
+            let año = dateantes.getFullYear();
+          
+            let santes = dia + '/' + mes + '/' + año;
+          
+          
+            let datedespues = new Date();
+            let sactual = String(datedespues.getDate()).padStart(2, '0') + '/' + String(datedespues.getMonth() + 1).padStart(2, '0') + '/' + datedespues.getFullYear();
+            let anio = datedespues.getFullYear();
+          
+            //enviar email
+            const listapeliculases = JSON.parse(moviees);
+            const listapeliculasen = JSON.parse(movieen);
+            const listapeliculasad = JSON.parse(moviead);
+            const listaserieses = JSON.parse(seriees);
+            const listaseriesen = JSON.parse(serisen);
+            const listasport = JSON.parse(sport);
+            const sumapelises = JSON.parse(sumes);
+            const sumapelisen = JSON.parse(sumen);
+            const sumapelisad = JSON.parse(sumad);
+            const sumsports = JSON.parse(sumsport);
+            const sumaserieses = JSON.parse(sumseries);
+            const sumaseriesen = JSON.parse(sumserien);
+
             // Set the content of the page to the generated HTML
-            const htmlContent = fs.readFileSync(htmlFilename, "utf8");
+            const htmlContent = `
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Reporte Semanal</title>
+              <style>
+              body {
+                font-family: Arial, sans-serif;
+                background-color: #ffffff;
+                color: #333;
+                padding: 50px;
+                margin: 0;
+                margin-top: 30px;
+              }
+              
+              .section {
+                page-break-before: avoid;
+              }
+              
+              h1 {
+                font-size: 36px;
+                color: #333;
+                margin: 0;
+                text-align: center;
+              }
+            
+              h2 {
+                font-size: 24px;
+                color: #666;
+                margin: 10px 0;
+                text-align: center;
+              }
+            
+              h3 {
+                font-size: 18px;
+                color: #333;
+                margin: 10px 0;
+              }
+            
+              ul, ol{
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+              }
+            
+              li {
+                margin-bottom: 5px;
+              }
+            
+              p {
+                margin: 0;
+              }
+            
+              .total {
+                font-weight: bold;
+                color: #333;
+              }
+            
+              .footer {
+                margin-top: 20px;
+                text-align: center;
+                font-size: 12px;
+                color: #999;
+              }
+              span {
+                color: #0C88E3;
+              }
+            </style>
+            
+            <body>
+              <h1 lang="ES-US">TOPMEDIA+</h1>
+              <hr>
+            
+              <h2>Reporte Diario de Contenido Subido - ${sactual}</h2>
+              <br><br><br>
+              ${listapeliculases.length > 0 ? `
+              <div class="section">
+              <h3>Películas en Español</h3>
+              <ol>
+                ${listapeliculases.map((peliculaes) => `<li>${peliculaes.title} <span>(${peliculaes.upload_date})</span></li>`).join("")}
+              </ol>
+              ${sumapelises.map((totales) => `<p class="total">Total: ${totales.total} Películas Español</p>`).join("")}
+              </div>
+              <br><hr><br>
+              ` : ''}
+              ${listapeliculasen.length > 0 ? `
+              <div class="section">
+              <h3>Películas en Inglés</h3>
+              <ol>
+                ${listapeliculasen.map((peliculaen) => `<li>${peliculaen.title} <span>(${peliculaen.upload_date})</span></li>`).join("")}
+              </ol>
+              ${sumapelisen.map((totalen) => `<p class="total">Total: ${totalen.total} Películas inglés</p>`).join("")}
+              </div>
+              <br><hr><br>
+              ` : ''}
+              ${listapeliculasad.length > 0 ? `
+              <div class="section">
+              <h3>Películas para Adultos</h3>
+              <ol>
+                ${listapeliculasad.map((peliculaad) => `<li>${peliculaad.title} <span>(${peliculaad.upload_date})</span></li>`).join("")}
+              </ol>
+              ${sumapelisad.map((totalad) => `<p class="total">Total: ${totalad.total} Películas Para Adulto</p>`).join("")}
+              </div>
+              <br><hr><br>
+              ` : ''}
+              ${listaseriesen.length > 0 ? `
+              <div class="section">
+              <h3>Series en Inglés</h3>
+              <ol>
+                ${listaseriesen.map((seriesen) => `<li>${seriesen.title} <span>(${seriesen.total} Capítulos)</span></li>`).join("")}
+              </ol>
+              ${sumaseriesen.map((totalseren) => `<p class="total">Total TvShows: ${totalseren.total_contents} Total Capítulos: ${totalseren.total_chapters}</p>`).join("")}
+              </div>
+              <br><hr><br>
+              ` : ''}
+              ${listaserieses.length > 0 ? `
+              <div class="section">
+              <h3>Series en Español</h3>
+              <ol>
+                ${listaserieses.map((serieses) => `<li>${serieses.title} <span>(${serieses.total} Capítulos)</span></li>`).join("")}
+              </ol>
+              ${sumaserieses.map((totalseres) => `<p class="total">Total Series: ${totalseres.total_contents} Totasl Capítulos: ${totalseres.total_chapters}</p>`).join("")}
+              </div>
+              <br><hr><br>
+              ` : ''}
+              ${listasport.length > 0 ? `
+              <div class="section">
+              <h3>Eventos Deportivos</h3>
+              <ol>
+                ${listasport.map((eventosdep) => `<li>${eventosdep.title}</li>`).join("")}
+              </ol>
+              ${sumsports.map((totalsports) => `<p class="total">Total: ${totalsports.total} Eventos Deportivos</p>`).join("")}
+              </div>
+              <br><br><br>
+              ` : ''}
+              <div class="footer section">
+                <p>© ${anio} TopMedia. All rights reserved.</p>
+              </div>
+            </body>    
+            </html>
+`;
+
             await page.setContent(htmlContent);
 
             // Generate PDF from HTML using Puppeteer
