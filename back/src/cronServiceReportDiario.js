@@ -32,7 +32,7 @@ function extractDataFromResult(result) {
 }
 
 const startCronJobDiario = () => {
-  cron.schedule("0 19 21 * * 1-5", () => {
+  cron.schedule("0 05 10 * * 1-5", () => {
     // ENVIA EMAIAUTOMATICO
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
