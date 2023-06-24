@@ -31,7 +31,7 @@ function extractDataFromResult(result) {
 }
 
 const startCronJobDiario = () => {
-  cron.schedule("0 00 17 * * 1-5", async () => {
+  cron.schedule("0 10 09 * * 1-6", async () => {
     // Configurar el transportador de nodemailer
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
