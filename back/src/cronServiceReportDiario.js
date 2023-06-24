@@ -5,6 +5,9 @@ require("dotenv").config();
 const mysqlconnection = require("../src/database");
 var cron = require("node-cron");
 
+//fecha actual : 23/09/2021 sin hora
+var fechahoy = new Date().toISOString().slice(0, 10);
+
 // Función para extraer los datos necesarios del resultado
 function extractDataFromResult(result) {
   const data = {
@@ -28,7 +31,7 @@ function extractDataFromResult(result) {
 }
 
 const startCronJobDiario = () => {
-  cron.schedule("0 25 13 * * 1-5", async () => {
+  cron.schedule("0 00 17 * * 1-5", async () => {
     // Configurar el transportador de nodemailer
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -43,7 +46,7 @@ const startCronJobDiario = () => {
 
     mysqlconnection.query(
       `
-          SELECT t1.TITLE AS title, t1.YEAR AS upload_date FROM MT_CONTENTS t1 WHERE upload_date BETWEEN DATE_SUB(NOW(), INTERVAL 24 HOUR) AND NOW() AND t1.COD_CAT_TYPE_CONTENT = ${process.env.ID_MOVIESES}; 
+          SELECT t1.TITLE_LATIN AS title, t1.YEAR AS upload_date FROM MT_CONTENTS t1 WHERE upload_date BETWEEN DATE_SUB(NOW(), INTERVAL 24 HOUR) AND NOW() AND t1.COD_CAT_TYPE_CONTENT = ${process.env.ID_MOVIESES}; 
           SELECT t1.TITLE AS title, t1.YEAR AS upload_date FROM MT_CONTENTS t1 WHERE upload_date BETWEEN DATE_SUB(NOW(), INTERVAL 24 HOUR) AND NOW() AND t1.COD_CAT_TYPE_CONTENT = ${process.env.ID_MOVIESEN};
           SELECT t1.TITLE AS title, t1.YEAR AS upload_date FROM MT_CONTENTS t1 WHERE upload_date BETWEEN DATE_SUB(NOW(), INTERVAL 24 HOUR) AND NOW() AND t1.COD_CAT_TYPE_CONTENT = ${process.env.ID_MOVIESAD};
           SELECT  c.TITLE as title, COUNT(cs.COD_CHAPTERS_SERIES) AS total FROM MT_CONTENTS c INNER JOIN MT_CHAPTERS_SERIES cs ON c.COD_CONTENT = cs.COD_CONTENT WHERE c.COD_CAT_TYPE_CONTENT= ${process.env.ID_SERIESES} AND cs.DATE_ADD >= NOW() - INTERVAL 24 HOUR GROUP BY c.COD_CONTENT, c.TITLE;
@@ -55,7 +58,7 @@ const startCronJobDiario = () => {
           SELECT COUNT(t1.TITLE) AS total FROM MT_CONTENTS t1 WHERE upload_date BETWEEN DATE_SUB(NOW(), INTERVAL 24 HOUR) AND NOW() AND t1.COD_CAT_TYPE_CONTENT = ${process.env.ID_SPORT};
           SELECT COUNT(DISTINCT c.COD_CONTENT) AS total_contents, COUNT(DISTINCT cs.COD_CHAPTERS_SERIES) AS total_chapters FROM MT_CONTENTS c INNER JOIN MT_CHAPTERS_SERIES cs ON c.COD_CONTENT = cs.COD_CONTENT WHERE c.COD_CAT_TYPE_CONTENT = ${process.env.ID_SERIESES} AND cs.DATE_ADD >= NOW() - INTERVAL 24 HOUR;
           SELECT COUNT(DISTINCT c.COD_CONTENT) AS total_contents, COUNT(DISTINCT cs.COD_CHAPTERS_SERIES) AS total_chapters FROM MT_CONTENTS c INNER JOIN MT_CHAPTERS_SERIES cs ON c.COD_CONTENT = cs.COD_CONTENT WHERE c.COD_CAT_TYPE_CONTENT = ${process.env.ID_SERIESEN} AND cs.DATE_ADD >= NOW() - INTERVAL 24 HOUR;
-          `,[1, 2],
+          `, [1, 2],
       async (error, result) => {
         if (error) {
           console.error("Error en la consulta MySQL:", error);
@@ -67,132 +70,174 @@ const startCronJobDiario = () => {
 
         // Crear un archivo PDF con los datos
         const pdfDoc = new PDFDocument();
-        pdfDoc.pipe(fs.createWriteStream("daily_report.pdf"));
+        pdfDoc.pipe(fs.createWriteStream("ReporteDiario.pdf"));
 
         // Agregar contenido al PDF
-        pdfDoc.font("Helvetica-Bold").fontSize(18).text("Reporte Diario", { align: "center" });
-
+        pdfDoc.font("Helvetica-Bold").fontSize(30).text("TOPMEDIA+", { align: "center", color: "#333" });
+        pdfDoc.font("Helvetica").fontSize(12).text(`Reporte Diario de Contenido Subido (${fechahoy})`, { align: "center", });
+        pdfDoc.moveTo(50, pdfDoc.y)
+          .lineTo(pdfDoc.page.width - 50, pdfDoc.y)
+          .stroke();
+        pdfDoc.moveDown();
+        pdfDoc.moveDown();
+        pdfDoc.font("Helvetica-Bold").fontSize(14).text("Resumen:", { underline: true, align: "center" });
+        pdfDoc.moveDown();
         // Agregar los datos al PDF
         pdfDoc.font("Helvetica").fontSize(12).text(`Películas en Español: ${data.totalMoviesES}`);
         pdfDoc.font("Helvetica").fontSize(12).text(`Películas en Inglés: ${data.totalMoviesEN}`);
         pdfDoc.font("Helvetica").fontSize(12).text(`Películas para Adultos: ${data.totalMoviesAD}`);
         pdfDoc.font("Helvetica").fontSize(12).text(`Eventos Deportivos: ${data.totalSports}`);
-        pdfDoc.font("Helvetica").fontSize(12).text(`Series en Español: ${data.totalSeriesES}`);
-        pdfDoc.font("Helvetica").fontSize(12).text(`Capítulos en Series en Español: ${data.totalChaptersES}`);
-        pdfDoc.font("Helvetica").fontSize(12).text(`Series en Inglés: ${data.totalSeriesEN}`);
-        pdfDoc.font("Helvetica").fontSize(12).text(`Capítulos en Series en Inglés: ${data.totalChaptersEN}`);
-
+        pdfDoc.font("Helvetica").fontSize(12).text(`Series en Español: ${data.totalSeriesES}, Capítulos: ${data.totalChaptersES}`);
+        pdfDoc.font("Helvetica").fontSize(12).text(`Series en Inglés: ${data.totalSeriesEN}, Capítulos: ${data.totalChaptersEN}`);
+        pdfDoc.moveDown();
+        pdfDoc.moveTo(50, pdfDoc.y)
+          .lineTo(pdfDoc.page.width - 50, pdfDoc.y)
+          .stroke();
+        pdfDoc.moveDown();
+        pdfDoc.moveDown();
         // Películas en Español
-  if (data.moviesES.length > 0) {
-    pdfDoc.font("Helvetica-Bold").fontSize(14).text("Películas (ES)", { underline: true });
-    pdfDoc.moveDown();
-    data.moviesES.forEach((movie) => {
-      pdfDoc.text(`${movie.title} - ${movie.upload_date}`);
-    });
-    pdfDoc.moveDown();
-  }
+        if (data.moviesES.length > 0) {
+          pdfDoc.fillColor("black").font("Helvetica-Bold").fontSize(14).text("Películas en Español", { underline: true, align: "center" });
+          pdfDoc.moveDown();
+          data.moviesES.forEach((movie) => {
+            pdfDoc.fillColor("black") // Establecer el color de relleno en rojo
+              .font("Helvetica") // Establecer la fuente en Helvetica
+              .text(`• ${movie.title}`, { continued: true }) // Dibujar el título de la película
+              .fillColor("teal") // Restaurar el color de relleno predeterminado a negro
+              .text(` (${movie.upload_date})`); // Dibujar la fecha de carga en rojo
+          });
+          pdfDoc.font("Helvetica-Bold").fontSize(13).text(`Total Películas en Español: ${data.totalMoviesES}`, { color: "red" });
+          pdfDoc.moveDown();
+          pdfDoc.moveTo(50, pdfDoc.y)
+            .lineTo(pdfDoc.page.width - 50, pdfDoc.y)
+            .stroke();
+          pdfDoc.moveDown();
+        }
 
-  // Películas en Inglés
-  if (data.moviesEN.length > 0) {
-    pdfDoc.font("Helvetica-Bold").fontSize(14).text("Movies (EN)", { underline: true });
-    pdfDoc.moveDown();
-    data.moviesEN.forEach((movie) => {
-      pdfDoc.text(`${movie.title} - ${movie.upload_date}`);
-    });
-    pdfDoc.moveDown();
-  }
+        // Películas en Inglés
+        if (data.moviesEN.length > 0) {
+          pdfDoc.fillColor("black").font("Helvetica-Bold").fontSize(14).text("Películas en Inglés", { underline: true, align: "center" });
+          pdfDoc.moveDown();
+          data.moviesEN.forEach((movie) => {
+            pdfDoc.fillColor("black") // Establecer el color de relleno en rojo
+              .font("Helvetica") // Establecer la fuente en Helvetica
+              .text(`• ${movie.title}`, { continued: true }) // Dibujar el título de la película
+              .fillColor("teal") // Restaurar el color de relleno predeterminado a negro
+              .text(` (${movie.upload_date})`); // Dibujar la fecha de carga en rojo
+          });
+          pdfDoc.font("Helvetica-Bold").fontSize(13).text(`Total Películas en Inglés: ${data.totalMoviesEN}`, { color: "red" });
+          pdfDoc.moveDown();
+          pdfDoc.moveTo(50, pdfDoc.y)
+            .lineTo(pdfDoc.page.width - 50, pdfDoc.y)
+            .stroke();
+          pdfDoc.moveDown();
+        }
 
-  // Películas para Adultos
-  if (data.moviesAD.length > 0) {
-    pdfDoc.font("Helvetica-Bold").fontSize(14).text("Adult Movies", { underline: true });
-    pdfDoc.moveDown();
-    data.moviesAD.forEach((movie) => {
-      pdfDoc.text(`${movie.title} - ${movie.upload_date}`);
-    });
-    pdfDoc.moveDown();
-  }
+        // Películas para Adultos
+        if (data.moviesAD.length > 0) {
+          pdfDoc.fillColor("black").font("Helvetica-Bold").fontSize(14).text("Películas para Adultos", { underline: true, align: "center" });
+          pdfDoc.moveDown();
+          data.moviesAD.forEach((movie) => {
+            pdfDoc.fillColor("black") // Establecer el color de relleno en rojo
+              .font("Helvetica") // Establecer la fuente en Helvetica
+              .text(`• ${movie.title}`, { continued: true }) // Dibujar el título de la película
+              .fillColor("teal") // Restaurar el color de relleno predeterminado a negro
+              .text(` (${movie.upload_date})`); // Dibujar la fecha de carga en rojo
+          });
+          pdfDoc.font("Helvetica-Bold").fontSize(13).text(`Total Películas para Adultos: ${data.totalMoviesAD}`, { color: "red" });
+          pdfDoc.moveDown();
+          pdfDoc.moveTo(50, pdfDoc.y)
+            .lineTo(pdfDoc.page.width - 50, pdfDoc.y)
+            .stroke();
+          pdfDoc.moveDown();
+        }
 
-  // Eventos Deportivos
-  if (data.sports.length > 0) {
-    pdfDoc.font("Helvetica-Bold").fontSize(14).text("Eventos Deportivos", { underline: true });
-    pdfDoc.moveDown();
-    data.sports.forEach((event) => {
-      pdfDoc.text(`${event.title} - ${event.date}`);
-    });
-    pdfDoc.moveDown();
-  }
+        // Eventos Deportivos
+        if (data.sports.length > 0) {
+          pdfDoc.fillColor("black").font("Helvetica-Bold").fontSize(14).text("Eventos Deportivos", { underline: true, align: "center" });
+          pdfDoc.moveDown();
+          data.sports.forEach((event) => {
+            pdfDoc.fillColor("black") // Establecer el color de relleno en rojo
+              .font("Helvetica") // Establecer la fuente en Helvetica
+              .text(`• ${event.title}`, { continued: true }) // Dibujar el título de la película
+          });
+          pdfDoc.font("Helvetica-Bold").fontSize(13).text(`Total Eventos Deportivos: ${data.totalSports}`, { color: "red" });
+          pdfDoc.moveDown();
+          pdfDoc.moveTo(50, pdfDoc.y)
+            .lineTo(pdfDoc.page.width - 50, pdfDoc.y)
+            .stroke();
+          pdfDoc.moveDown();
+        }
 
-  // Series en Español
-  if (data.seriesES.length > 0) {
-    pdfDoc.font("Helvetica-Bold").fontSize(14).text("Series (ES)", { underline: true });
-    pdfDoc.moveDown();
-    data.seriesES.forEach((series) => {
-      pdfDoc.text(`${series.title} - Temporadas: ${series.total_seasons}`);
-    });
-    pdfDoc.moveDown();
-  }
+        // Series en Español
+        if (data.seriesES.length > 0) {
+          pdfDoc.fillColor("black").font("Helvetica-Bold").fontSize(14).text("Series en Español", { underline: true, align: "center" });
+          pdfDoc.moveDown();
+          data.seriesES.forEach((series) => {
+            pdfDoc.fillColor("black") // Establecer el color de relleno en negro
+            .font("Helvetica") // Establecer la fuente en Helvetica
+            .text(`${series.title}`, { continued: true })
+            .fillColor("teal") // Restaurar el color de relleno predeterminado a negro
+            .text(` (${series.total} Capítulos)`)
+          });
+          pdfDoc.font("Helvetica-Bold").fontSize(13).text(`Total Series en Español: ${data.totalSeriesES}, Capítulos: ${data.totalChaptersES}`);
+          pdfDoc.moveDown();
+          pdfDoc.moveTo(50, pdfDoc.y)
+            .lineTo(pdfDoc.page.width - 50, pdfDoc.y)
+            .stroke();
+          pdfDoc.moveDown();
+        }
 
-  // Capítulos de Series en Español
-  if (data.totalChaptersES.length > 0) {
-    pdfDoc.font("Helvetica-Bold").fontSize(14).text("Capítulos de Series (ES)", { underline: true });
-    pdfDoc.moveDown();
-    data.totalChaptersES.forEach((episode) => {
-      pdfDoc.text(`${episode.title} - Temporada: ${episode.season} - Episodio: ${episode.episode}`);
-    });
-    pdfDoc.moveDown();
-  }
-
-  // Series en Inglés
-  if (data.seriesEN.length > 0) {
-    pdfDoc.font("Helvetica-Bold").fontSize(14).text("Series (EN)", { underline: true });
-    pdfDoc.moveDown();
-    data.seriesEN.forEach((series) => {
-      pdfDoc.text(`${series.title} - Seasons: ${series.total_seasons}`);
-    });
-    pdfDoc.moveDown();
-  }
-
-  // Episodes of Series in English
-  if (data.totalChaptersEN.length > 0) {
-    pdfDoc.font("Helvetica-Bold").fontSize(14).text("Episodes of Series (EN)", { underline: true });
-    pdfDoc.moveDown();
-    data.totalChaptersEN.forEach((episode) => {
-      pdfDoc.text(`${episode.title} - Season: ${episode.season} - Episode: ${episode.episode}`);
-    });
-    pdfDoc.moveDown();
-  }
+        // Series en Inglés
+        if (data.seriesEN.length > 0) {
+          pdfDoc.fillColor("black").font("Helvetica-Bold").fontSize(14).text("Series en Inglés", { underline: true, align: "center" });
+          pdfDoc.moveDown();
+          data.seriesEN.forEach((series) => {
+            pdfDoc.fillColor("black") // Establecer el color de relleno en negro
+            .font("Helvetica") // Establecer la fuente en Helvetica
+            .text(`${series.title}`, {continued: true})
+            .fillColor("teal") // Restaurar el color de relleno predeterminado a negro
+            .text(` (${series.total} Capítulos)`)
+          });
+          pdfDoc.font("Helvetica-Bold").fontSize(13).text(`Total Series en Inglés: ${data.totalSeriesEN}, Capítulos: ${data.totalChaptersEN}`);
+          pdfDoc.moveDown();
+          pdfDoc.moveTo(50, pdfDoc.y)
+            .lineTo(pdfDoc.page.width - 50, pdfDoc.y)
+            .stroke();
+          pdfDoc.moveDown();
+        }
 
         // Finalizar el PDF
         pdfDoc.end();
 
         // Enviar el correo electrónico con el archivo PDF adjunto
         const mailOptions = {
-              from: "TopMedia+ - Reporte Diario <" + process.env.EMAIL_FROM + ">",
-              to: [process.env.EMAIL_CEO, process.env.EMAIL_ADMIN].join(","),
-              subject: "Reporte Diario de Contenido Subido a TopMedia+",
-              text: `Reporte Diario de Contenido Subido a TopMedia+\n\n\n\nResumen:\n\nTotal Películas en Español: ${result[6][0].total}\nTotal Películas en Inglés: ${result[7][0].total}\nTotal Películas para Adultos: ${result[8][0].total}\nTotal Series en Español: ${result[10][0].total_contents} Total Capítulos: ${result[10][0].total_chapters}\nTotal Series en Inglés: ${result[11][0].total_contents} Total Capítulos: ${result[11][0].total_chapters}\nTotal Eventos Deportivos: ${result[9][0].total}\n\n\n\nEste correo ha sido generado automáticamente. Por favor, no responder a este mensaje.`,
-              attachments: [
-                {
-                  filename: "report.pdf",
-                  content: fs.createReadStream("daily_report.pdf"),
-                },
-              ],
-            };
+          from: "TopMedia+ - Reporte Diario <" + process.env.EMAIL_FROM + ">",
+          to: [process.env.EMAIL_CEO, process.env.EMAIL_ADMIN].join(","),
+          subject: "Reporte Diario de Contenido Subido a TopMedia+",
+          text: `Reporte Diario de Contenido Subido a TopMedia+\n\n\n\nResumen:\n\nTotal Películas en Español: ${result[6][0].total}\nTotal Películas en Inglés: ${result[7][0].total}\nTotal Películas para Adultos: ${result[8][0].total}\nTotal Series en Español: ${result[10][0].total_contents} Total Capítulos: ${result[10][0].total_chapters}\nTotal Series en Inglés: ${result[11][0].total_contents} Total Capítulos: ${result[11][0].total_chapters}\nTotal Eventos Deportivos: ${result[9][0].total}\n\n\n\nEste correo ha sido generado automáticamente. Por favor, no responder a este mensaje.`,
+          attachments: [
+            {
+              filename: "ReporteDiario.pdf",
+              content: fs.createReadStream("ReporteDiario.pdf"),
+            },
+          ],
+        };
 
-            transporter.sendMail(mailOptions, (error, info) => {
-              if (error) {
-                console.error("Error al enviar el correo electrónico:", error);
-              } else {
-                console.log("Correo electrónico enviado:", info.response);
-              }
-            });
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.error("Error al enviar el correo electrónico:", error);
+          } else {
+            console.log("Correo electrónico enviado:", info.response);
           }
-        );
-    }, {
-      scheduled: true,
-      timezone: "America/Tegucigalpa",
-    });
-  };
+        });
+      }
+    );
+  }, {
+    scheduled: true,
+    timezone: "America/Tegucigalpa",
+  });
+};
 
 module.exports = {
   startCronJobDiario: startCronJobDiario
