@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import "./../../components/Cards/card.css";
 import useAuth from '../../hooks/useAuth';
-import { PDFDownloadLink, PDFViewer, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import BannerReport from '../../partials/dashboard/BannerReport.jsx';
 
 // components
 import clienteAxios from '../../config/axios';
@@ -202,7 +203,9 @@ export default function AddMovieEs() {
         <>
             <main>
                 <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+                <BannerReport />
                     <div className="sm:justify-between sm:items-center mb-8">
+                        
                         <form
                             onSubmit={handleSubmit}
                         >
@@ -325,16 +328,13 @@ export default function AddMovieEs() {
                                         >
                                             Cerrar
                                         </button>
-                                        <PDFViewer className="mt-4" width="100%" height="850">
-                                            {pdfDocument}
-                                        </PDFViewer>
+                                        
                                     </>
                                 )}
                                 {!showPdf && (
                                     <button
                                         type="submit"
                                         className="bg-green-500 hover:bg-green-600 focus:ring-green-500 focus:ring-offset-green-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-md py-2 px-4"
-                                        disabled={true}
                                     >
                                         Generar reporte
                                     </button>
