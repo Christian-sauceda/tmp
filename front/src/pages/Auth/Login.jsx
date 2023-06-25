@@ -34,7 +34,7 @@ const Login = () => {
     return (
         <>
             <div>
-                <h1 className="text-sky-600 font-black text-6xl">
+                <h1 className="text-teal-600 font-black text-6xl">
                     Inicia Sesión y Administra el Contenido de
                     <span className="text-black"> TopMedia+</span>
                 </h1>
@@ -73,7 +73,7 @@ const Login = () => {
                     <input
                         type="submit"
                         value="Iniciar Sesión"
-                        className="bg-sky-600 w-full py-3 px-10 rounded-xl mt-6 text-white uppercase font-bold hover:cursor-pointer hover:bg-sky-700 md:w-auto "
+                        className="bg-teal-600 w-full py-3 px-10 rounded-xl mt-6 text-white uppercase font-bold hover:cursor-pointer hover:bg-teal-700 md:w-auto "
                     />
                 </form>
                  <nav className="mt-10 lg:flex lg:justify-end">

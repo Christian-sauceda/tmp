@@ -33,7 +33,7 @@ const OlvidePassword = () => {
   return (
     <>
       <div>
-        <h1 className="text-sky-600 font-black text-6xl">
+        <h1 className="text-teal-600 font-black text-6xl">
           Recupera tu Acceso a
           <span className="text-black"> TopMedia+</span>
         </h1>
@@ -61,7 +61,7 @@ const OlvidePassword = () => {
           <input
             type="submit"
             value="Enviar Instrucciones"
-            className="bg-sky-600 w-full py-3 px-10 rounded-xl mt-6 text-white uppercase font-bold hover:cursor-pointer hover:bg-sky-700 md:w-auto "
+            className="bg-teal-600 w-full py-3 px-10 rounded-xl mt-6 text-white uppercase font-bold hover:cursor-pointer hover:bg-teal-700 md:w-auto "
           />
         </form>
         <nav className="mt-10 lg:flex lg:justify-end">

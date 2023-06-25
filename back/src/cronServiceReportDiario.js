@@ -31,7 +31,7 @@ function extractDataFromResult(result) {
 }
 
 const startCronJobDiario = () => {
-  cron.schedule("0 00 17 * * 1-5", async () => {
+  cron.schedule("0 30 09 * * 2-6", async () => {
     // Configurar el transportador de nodemailer
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -212,7 +212,7 @@ const startCronJobDiario = () => {
 
         // Enviar el correo electrónico con el archivo PDF adjunto
         const mailOptions = {
-          from: "TopMedia+ - Reporte Diario <" + process.env.EMAIL_FROM + ">",
+          from: "TopMedia+ <" + process.env.EMAIL_FROM + ">",
           to: [process.env.EMAIL_CEO, process.env.EMAIL_ADMIN].join(","),
           subject: "Reporte Diario de Contenido Subido a TopMedia+",
           text: `Reporte Diario de Contenido Subido a TopMedia+\n\n\n\nResumen:\n\nTotal Películas en Español: ${result[6][0].total}\nTotal Películas en Inglés: ${result[7][0].total}\nTotal Películas para Adultos: ${result[8][0].total}\nTotal Series en Español: ${result[10][0].total_contents} Total Capítulos: ${result[10][0].total_chapters}\nTotal Series en Inglés: ${result[11][0].total_contents} Total Capítulos: ${result[11][0].total_chapters}\nTotal Eventos Deportivos: ${result[9][0].total}\n\n\n\nEste correo ha sido generado automáticamente. Por favor, no responder a este mensaje.`,

@@ -61,7 +61,7 @@ const NuevoPassword = () => {
     return (
         <>
             <div>
-                <h1 className="text-sky-600 font-black text-6xl">
+                <h1 className="text-teal-600 font-black text-6xl">
                     Restablece tu contraseña y no pierdas el acceso a
                     <span className="text-black"> TopMedia+</span>
                 </h1>
@@ -91,7 +91,7 @@ const NuevoPassword = () => {
                         <input
                             type="submit"
                             value="Guardar Nueva Contraseña"
-                            className="bg-sky-600 w-full py-3 px-10 rounded-xl mt-6 text-white uppercase font-bold hover:cursor-pointer hover:bg-sky-700 md:w-auto "
+                            className="bg-teal-600 w-full py-3 px-10 rounded-xl mt-6 text-white uppercase font-bold hover:cursor-pointer hover:bg-teal-700 md:w-auto "
                         />
                     </form>
 
