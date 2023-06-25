@@ -288,13 +288,14 @@ export default function AddMovieEs() {
                                                         <label
                                                             className="appearance-none block w-full text-gray-700 borde rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                                         >
-                                                            Correo:
+                                                            Correo: <span className="text-xs text-gray-500">(opcional)</span>
                                                         </label>
                                                         <input
                                                             type="email"
                                                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                                             value={correo}
                                                             onChange={(e) => setCorreo(e.target.value)}
+                                                            disabled={true}
                                                         />
                                                     </div>
                                                 </div>
@@ -328,7 +329,6 @@ export default function AddMovieEs() {
                                         >
                                             Cerrar
                                         </button>
-                                        
                                     </>
                                 )}
                                 {!showPdf && (
