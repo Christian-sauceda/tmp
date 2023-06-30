@@ -92,6 +92,12 @@ export default function AddMovieEs() {
             }
             const datos = { fechaDesde, fechaHasta, tipo: Tipo.value };
 
+            // Verificar si fechaHasta es menor que fechaDesde
+            if (fechaDesde && fechaHasta && fechaHasta < fechaDesde) {
+                alert('La fecha Hasta no puede ser menor que la fecha Desde');
+                return;
+            }
+
             const label = Tipo.label.charAt(0).toUpperCase() + Tipo.label.slice(1).toLowerCase();
             //si Tipo tiene valor, y fecha_inicio y fecha_fin son null entonces se ejecuta la consulta de tipo
             if (datos.tipo && !datos.fechaDesde && !datos.fechaHasta) {
@@ -148,27 +154,26 @@ export default function AddMovieEs() {
                         <Document>
                             <Page style={styles.page}>
                                 <Text style={styles.title}>
-                                    Reporte de <Text style={styles.spam}>{label}</Text> {fechaDesde ? `del ${fechaDesde}` : ''} {fechaDesde && fechaHasta ? `al ${fechaHasta}` : ''}
+                                    Reporte de <Text style={[styles.spam, styles.underline]}>{label}</Text> {fechaDesde ? `del ${fechaDesde}` : ''} {fechaDesde && fechaHasta ? `al ${fechaHasta}` : ''}
                                 </Text>
 
                                 {Consulta.length > 0 ? (
                                     <>
                                         {Consulta.map((pelicula, index) => (
                                             <View key={pelicula.COD_CONTENT}>
-                                                <Text style={styles.movieTitle}>{`${index + 1}.- ${pelicula.TITLE}`}</Text>
+                                                <Text style={[styles.movieTitle, styles.bold]}>{`${index + 1}.- ${pelicula.TITLE}`}</Text>
                                             </View>
                                         ))}
-                                        <View style={{ marginTop: '20px' }}>
-                                            <Text style={{ fontSize: '18px', fontWeight: '500', color: 'red' }}>{`Total: ${total}`}</Text>
+                                        <View style={styles.totalContainer}>
+                                            <Text style={[styles.totalText, styles.bold]}>{`Total: ${total}`}</Text>
                                         </View>
                                         <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
                                             `${pageNumber} / ${totalPages}`
                                         )} fixed />
                                     </>
                                 ) : (
-                                    <Text style={styles.noContentText}>¡No hay contenido de <Text style={styles.spam}>{label}</Text> con el filtro de búsqueda definido!</Text>
+                                    <Text style={styles.noContentText}>¡No hay contenido de <Text style={[styles.spam, styles.bold]}>{label}</Text> con el filtro de búsqueda definido!</Text>
                                 )}
-
                             </Page>
                         </Document>
                     );
@@ -203,9 +208,9 @@ export default function AddMovieEs() {
         <>
             <main>
                 <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
-                <BannerReport />
+                    <BannerReport />
                     <div className="sm:justify-between sm:items-center mb-8">
-                        
+
                         <form
                             onSubmit={handleSubmit}
                         >
@@ -300,28 +305,28 @@ export default function AddMovieEs() {
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                     </div>
-
                                 </div>
-
                             </div>
                             <div className="pt-8 w-f">
+
                                 {pdfDocument && showPdf && (
                                     <>
                                         <PDFDownloadLink document={pdfDocument} fileName="reporte.pdf">
                                             {({ blob, url, loading, error }) => (
-                                                <a href={url} download="documento.pdf">
-                                                    {loading ? (
-                                                        <span style={{ color: 'gray' }}>Generando PDF...</span>
-                                                    ) : (
-                                                        <span style={{ color: 'blue', textDecoration: 'underline' }}>Descargar PDF</span>
-                                                    )}
-                                                </a>
+                                                <>
+                                                    <a href={url} download="documento.pdf">
+                                                        {loading ? (
+                                                            <span style={{ color: 'gray' }}>Generando PDF...</span>
+                                                        ) : (
+                                                            <span style={{ color: 'blue', textDecoration: 'underline' }}>Descargar PDF</span>
+                                                        )}
+                                                    </a>
+                                                </>
                                             )}
                                         </PDFDownloadLink>
+                                        <br></br><br></br>
                                         <button
                                             type="button"
                                             onClick={() => setShowPdf(false)}

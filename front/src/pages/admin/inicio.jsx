@@ -71,7 +71,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {movieses.map((item) => (
             <CardStats
-              statSubtitle="Total Películas Español"
+              statSubtitle="Películas Español"
               statTitle={item.moviees}
               statIconName={`fas fa-film`}
               statIconColor="bg-indigo-600"
@@ -82,7 +82,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {moviesen.map((item) => (
             <CardStats
-              statSubtitle="Total Películas Inglés"
+              statSubtitle="Películas Inglés"
               statTitle={item.movieen}
               statIconName="fas fa-video"
               statIconColor="bg-orange-600"
@@ -93,7 +93,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {moviesadult.map((item) => (
             <CardStats
-              statSubtitle="Total Películas para Adultos"
+              statSubtitle="Películas Adultos"
               statTitle={item.moviead}
               statIconName="fas fa-tv"
               statIconColor="bg-green-600"
@@ -105,7 +105,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {serieses.map((item) => (
             <CardStats
-              statSubtitle="Total Series en Español"
+              statSubtitle="Series en Español"
               statTitle={item.seriees}
               statIconName="fas fa-tv"
               statIconColor="bg-sky-600"
@@ -116,7 +116,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {seriesen.map((item) => (
             <CardStats
-              statSubtitle="Total Series en Inglés"
+              statSubtitle="Series en Inglés"
               statTitle={item.serieen}
               statIconName="fas fa-file-video"
               statIconColor="bg-red-600"
@@ -127,7 +127,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {events.map((item) => (
             <CardStats
-              statSubtitle="Total Eventos Deportivos"
+              statSubtitle="Eventos Deportivos"
               statTitle={item.event}
               statIconName="fas fa-file-video"
               statIconColor="bg-gray-600"

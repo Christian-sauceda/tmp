@@ -72,7 +72,7 @@ const CardUltimasSeriesEn = () => {
                             selectableRows: "none",
                             elevation: 0,
                             fixedHeader: false ,
-                            rowsPerPage: 5,
+                            rowsPerPage: 2,
                             textLabels: {
                                 body: {
                                     noMatch: "No hay datos para mostrar",
