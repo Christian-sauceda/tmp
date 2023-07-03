@@ -13,6 +13,7 @@ router.get('/getseriesen/lastday/:ID', tvshowsENCtrl.gettvshowsenlastday);
 router.post('/', tvshowsENCtrl.createtvshowsen);
 router.put('/:COD/:ID', tvshowsENCtrl.updatetvshowsenById);
 router.delete('/:COD', tvshowsENCtrl.deletetvshowsenById);
+router.get('/getseriesen/lastweek/:ID', tvshowsENCtrl.gettvshowsenlastweek);
 
 
 export default router;

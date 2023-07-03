@@ -63,7 +63,7 @@ const CardUltimasSeriesEn = () => {
                 <div className="block w-full overflow-x-auto ">
                     {/* Projects table */}
                     <MUIDataTable
-                        title={"Últimas Series en Inglés"}
+                        title={"Últ. Series en Inglés"}
                         data={series}
                         columns={columns}
                         options={{

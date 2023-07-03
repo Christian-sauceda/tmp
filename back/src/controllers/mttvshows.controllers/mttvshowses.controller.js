@@ -13,6 +13,18 @@ export const gettvshowses = async (req, res) => {
     });
 }
 
+// GET ALL CATALOG OF TV SHOWS ES LAST WEEK
+export const gettvshowseslastweek = async (req, res) => {
+    const { ID } = req.params;
+    mysqlconnection.query("CALL PROC_SEL_TVSHOW_LASTWEEK(?)", [ID], (err, rows, fields) => {
+        if (!err) {
+            res.status(200).json(rows[0]);
+        } else {
+            console.log(err);
+        }
+    });
+}
+
 export const getselecttvshowses = async (req, res) => {
     const { ID } = req.params;
     mysqlconnection.query("CALL PROC_SELECT_TVSHOW_ES(?)", [ID], (err, rows, fields) => {

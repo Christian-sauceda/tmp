@@ -17,6 +17,8 @@ export default function Inicio() {
   const [serieses, setSerieses] = useState([]);
   const [seriesen, setSeriesen] = useState([]);
   const [events, setEvents] = useState([]);
+  const [serieseslast, setSeriesesLast] = useState([]);
+  const [seriesenlast, setSeriesenLast] = useState([]);
 
   const mostrarDatos = async () => {
     try {
@@ -55,6 +57,17 @@ export default function Inicio() {
         const ev = response.data;
         setEvents(ev)
       })
+      const resultado = await ClienteAxios.get(`/mttvshows/es/getserieses/lastweek/${import.meta.env.VITE_ID_SERIES_ES}`, config).then((response) => {
+        const series = response.data;
+        setSeriesesLast(series)
+      })
+
+      // getseriesen
+      const resultado2 = await ClienteAxios.get(`/mttvshows/en/getseriesen/lastweek/${import.meta.env.VITE_ID_SERIES_EN}`, config).then((response) => {
+        const series = response.data;
+        setSeriesenLast(series)
+      })
+    
 
     } catch (error) {
       console.log(error);
@@ -63,15 +76,17 @@ export default function Inicio() {
   useEffect(() => {
     mostrarDatos();
   }, [])
+
+
   return (
     <>
-      <div className="flex flex-wrap pb-10">
+      <div className="flex flex-wrap pb-0">
 
 
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {movieses.map((item) => (
             <CardStats
-              statSubtitle="Películas Español"
+              statSubtitle="Películas"
               statTitle={item.moviees}
               statIconName={`fas fa-film`}
               statIconColor="bg-indigo-600"
@@ -82,7 +97,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {moviesen.map((item) => (
             <CardStats
-              statSubtitle="Películas Inglés"
+              statSubtitle="Movies"
               statTitle={item.movieen}
               statIconName="fas fa-video"
               statIconColor="bg-orange-600"
@@ -93,7 +108,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {moviesadult.map((item) => (
             <CardStats
-              statSubtitle="Películas Adultos"
+              statSubtitle="P. Adultos"
               statTitle={item.moviead}
               statIconName="fas fa-tv"
               statIconColor="bg-green-600"
@@ -105,7 +120,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {serieses.map((item) => (
             <CardStats
-              statSubtitle="Series en Español"
+              statSubtitle="Series"
               statTitle={item.seriees}
               statIconName="fas fa-tv"
               statIconColor="bg-sky-600"
@@ -116,7 +131,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {seriesen.map((item) => (
             <CardStats
-              statSubtitle="Series en Inglés"
+              statSubtitle="TvShows"
               statTitle={item.serieen}
               statIconName="fas fa-file-video"
               statIconColor="bg-red-600"
@@ -127,7 +142,7 @@ export default function Inicio() {
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {events.map((item) => (
             <CardStats
-              statSubtitle="Eventos Deportivos"
+              statSubtitle="Eventos"
               statTitle={item.event}
               statIconName="fas fa-file-video"
               statIconColor="bg-gray-600"
@@ -136,24 +151,32 @@ export default function Inicio() {
         </div>
       </div>
 
-      <div className="flex flex-wrap mt-4 pt-6 ">
-        <div className="w-full xl:w-8/12 px-4">
+      <div className="flex flex-wrap mt-4 pt-0 ">
+        <div className="w-full xl:w-7/12 px-4">
           <CardUltimasPelisEs />
         </div>
-        <div className="w-full xl:w-4/12 px-4">
+        <div className="w-full xl:w-5/12 px-4">
           <CardUltimasSeriesEs />
+          {serieseslast.map((item) => (
+              <p>Series: {item.total_contents}, Capitulos: {item.total_chapters}</p>
+            ))}
         </div>
-        <div className="w-full xl:w-8/12 px-4">
+        <div>
+        </div>
+        <div className="w-full xl:w-7/12 px-4">
           <CardUltimasPelisEn />
+          
         </div>
-        <div className="w-full xl:w-4/12 px-4">
+        <div className="w-full xl:w-5/12 px-4">
           <CardUltimasSeriesEn />
+          {seriesenlast.map((item) => (
+              <p>TvShows: {item.total_contents}, Chapters: {item.total_chapters}</p>
+            ))}
         </div>
-        <div className="w-full xl:w-8/12 px-4">
+        <div className="w-full xl:w-7/12 px-4">
           <CardUltimasPelisAdult />
         </div>
       </div>
-
     </>
   );
 }
