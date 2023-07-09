@@ -159,23 +159,22 @@ export default function AddMovieEn() {
                     setPeliculas2(response.data)
                     setExpediente({
                         ...expediente,
-                        cast: response.data.Actors,
-                        director: response.data.Director,
-                        rated: response.data.Rated,
-                        runtime: response.data.Runtime.slice(0, -3),
-                        country: response.data.Country,
+                        cast: response.data.Response === "False" ? 'Not available' : response.data.Actors,
+                        director: response.data.Response === "False" ? 'Not available' : response.data.Director,
+                        rated: response.data.Response === "False" ? 'PG' : response.data.Rated,
+                        runtime: response.data.Response === "False" ? '100' : response.data.Runtime.slice(0, -3),
+                        country: response.data.Response === "False" ? 'Not available' : response.data.Country,
                     })
                 })
                 .catch(err => console.log(err));
         }
     }, [TITLEEN]);
 
-
     useEffect(() => {
         if (expediente.id) {
             setTITLE(expediente.title)
-            setBACK(`${import.meta.env.VITE_API_IMAGE}${expediente.backdrop_path}`)
-            setPOSTER(`${import.meta.env.VITE_API_IMAGE}${expediente.poster_path}`)
+            setBACK(expediente.backdrop_path === null ? `${import.meta.env.VITE_BACKEND_URL}/images/imgs/moviesen/back/no-image.jpg` : `${import.meta.env.VITE_API_IMAGE}${expediente.backdrop_path}`)
+            setPOSTER(expediente.poster_path === null ? `${import.meta.env.VITE_BACKEND_URL}/images/imgs/moviesen/poster/no-image.jpg` : `${import.meta.env.VITE_API_IMAGE}${expediente.poster_path}`)
             setDURATION(expediente.runtime)
             setCALIF(expediente.vote_average)
             setSYNOPSIS(expediente.overview)
@@ -205,12 +204,6 @@ export default function AddMovieEn() {
         //ocultar el listado de peliculas
         setPeliculas([])
     }
-
-
-
-    
-
-
     const { msg } = alerta;
     return (
         <>

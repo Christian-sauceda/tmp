@@ -81,15 +81,13 @@ export default function Inicio() {
   return (
     <>
       <div className="flex flex-wrap pb-0">
-
-
         <div className="w-full lg:w-6/12 xl:w-2/12 px-4">
           {movieses.map((item) => (
             <CardStats
               statSubtitle="Películas"
               statTitle={item.moviees}
-              statIconName={`fas fa-film`}
-              statIconColor="bg-indigo-600"
+              statIconName={`fas fa-video`}
+              statIconColor="bg-indigo-500"
             />
           ))}
         </div>
@@ -100,7 +98,7 @@ export default function Inicio() {
               statSubtitle="Movies"
               statTitle={item.movieen}
               statIconName="fas fa-video"
-              statIconColor="bg-orange-600"
+              statIconColor="bg-orange-500"
             />
           ))}
         </div>
@@ -111,7 +109,7 @@ export default function Inicio() {
               statSubtitle="P. Adultos"
               statTitle={item.moviead}
               statIconName="fas fa-tv"
-              statIconColor="bg-green-600"
+              statIconColor="bg-green-500"
 
             />
           ))}
@@ -123,7 +121,7 @@ export default function Inicio() {
               statSubtitle="Series"
               statTitle={item.seriees}
               statIconName="fas fa-tv"
-              statIconColor="bg-sky-600"
+              statIconColor="bg-sky-500"
             />
           ))}
         </div>
@@ -134,7 +132,7 @@ export default function Inicio() {
               statSubtitle="TvShows"
               statTitle={item.serieen}
               statIconName="fas fa-file-video"
-              statIconColor="bg-red-600"
+              statIconColor="bg-red-500"
             />
           ))}
         </div>
@@ -145,7 +143,7 @@ export default function Inicio() {
               statSubtitle="Eventos"
               statTitle={item.event}
               statIconName="fas fa-file-video"
-              statIconColor="bg-gray-600"
+              statIconColor="bg-yellow-500"
             />
           ))}
         </div>

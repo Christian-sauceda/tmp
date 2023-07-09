@@ -183,6 +183,9 @@ export default function AddMovieAdult() {
         value = value.replace(/\./g, ' '); // borra los puntos
         value = value.toLowerCase().split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' '); // convierte la primera letra de cada palabra en mayúscula
         setTITLE(value);
+        setSYNOPSIS(value);
+        const year = new Date().getFullYear();
+        setYEAR(year);
     };
 
     const { msg } = alerta;

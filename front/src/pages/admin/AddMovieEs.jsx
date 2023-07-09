@@ -163,11 +163,11 @@ export default function AddMovieEs() {
                     setPeliculas2(response.data)
                     setExpediente({
                         ...expediente,
-                        cast: response.data.Actors,
-                        director: response.data.Director,
-                        rated: response.data.Rated,
-                        runtime: response.data.Runtime.slice(0, -3),
-                        country: response.data.Country,
+                        cast: response.data.Response === "False" ? 'No Disponible' : response.data.Actors,
+                        director: response.data.Response === "False" ? 'No Disponible' : response.data.Director,
+                        rated: response.data.Response === "False" ? 'PG' : response.data.Rated,
+                        runtime: response.data.Response === "False" ? '100' : response.data.Runtime.slice(0, -3),
+                        country: response.data.Response === "False" ? 'No Disponible' : response.data.Country,
                     })
                 })
                 .catch(err => console.log(err));
@@ -177,8 +177,8 @@ export default function AddMovieEs() {
     useEffect(() => {
         if (expediente.id) {
             setTITLE(expediente.title)
-            setBACK(`${import.meta.env.VITE_API_IMAGE}${expediente.backdrop_path}`)
-            setPOSTER(`${import.meta.env.VITE_API_IMAGE}${expediente.poster_path}`)
+            setBACK(expediente.backdrop_path === null ? `${import.meta.env.VITE_BACKEND_URL}/images/imgs/movieses/back/no-image.jpg` : `${import.meta.env.VITE_API_IMAGE}${expediente.backdrop_path}`)
+            setPOSTER(expediente.poster_path === null ? `${import.meta.env.VITE_BACKEND_URL}/images/imgs/movieses/poster/no-image.jpg` : `${import.meta.env.VITE_API_IMAGE}${expediente.poster_path}`)
             setDURATION(expediente.runtime)
             setCALIF(expediente.vote_average)
             setSYNOPSIS(expediente.overview)
@@ -191,7 +191,6 @@ export default function AddMovieEs() {
             setTITLE_LATIN(expediente.original_title)
         }
     }, [expediente]);
-
     const handleExpedienteClick = (pelicula) => {
         setExpediente({
             id: pelicula.id,
@@ -224,7 +223,6 @@ export default function AddMovieEs() {
                                     <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-100 border-0">
                                         <div className="flex-auto px-4 lg:px-10 py-10 pt-2">
                                             <div className="flex flex-wrap">
-
                                                 <div className="w-full lg:w-10/12 px-4">
                                                     <div className="relative w-full mb-3">
                                                         <label
@@ -244,11 +242,9 @@ export default function AddMovieEs() {
                                                             maxLength={150}
                                                             required
                                                         />
-
                                                         <div className='search-list' style={{ display: "block" }} id='search-list'>
                                                             {peliculas.map((pelicula) => (
                                                                 <>
-
                                                                     <div className='search-list-item'>
                                                                         <div className='search-item-thumbnail'>
                                                                             <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${pelicula.poster_path}`} />
@@ -259,11 +255,8 @@ export default function AddMovieEs() {
                                                                     </div>
                                                                 </>
                                                             ))}
-
                                                         </div>
-
                                                     </div>
-
                                                 </div>
                                                 <div className="w-full lg:w-2/12 px-3 pt-2">
                                                     <div className="relative w-full mb-3">
@@ -283,26 +276,9 @@ export default function AddMovieEs() {
                                                             <option value="es-ES">Español</option>
                                                             <option value="en-US">Inglés</option>
                                                         </select>
-
-
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            {/* 
-                                            <select
-                                                            name="calidad"
-                                                            id="calidad"
-                                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                            value={CODQUALITY}
-                                                            onChange={(e) => setCODQUALITY(e.target.value)}
-                                                        >
-                                                            <option value="">Seleccione</option>
-                                                            {selectcalidad.map((item) => (
-                                                                <option key={item.COD_CALIDAD} value={item.COD_CALIDAD}>{item.CALIDAD}</option>
-                                                            ))}
-                                                        </select>
-                                            */}
                                             <div className="flex flex-wrap">
                                                 <div className="w-full lg:w-3/12 px-4">
                                                     <div className="relative w-full mb-3">
@@ -327,7 +303,6 @@ export default function AddMovieEs() {
                                                         />
                                                     </div>
                                                 </div>
-
                                                 <div className="w-full lg:w-3/12 px-4">
                                                     <div className="relative w-full mb-3">
                                                         <label

@@ -181,10 +181,21 @@ export default function AddCapSerieEs() {
 
                     setExpediente(expedienteData);
                     setNAME_CHAPTER(`${episode_number} - ${name}`);
-                    setSYNOSIS(overview);
-                    setBACK(`${import.meta.env.VITE_API_IMAGE}${still_path}`);
-                    setPOSTER(`${import.meta.env.VITE_API_IMAGE}${poster_path}`);
-
+                    if (overview === '') {
+                        setSYNOSIS(`${episode_number} - ${name}`);
+                    } else {
+                        setSYNOSIS(overview);
+                    }
+                    if (still_path === null) {
+                        setBACK(`${import.meta.env.VITE_BACKEND_URL}/images/imgs/serieses/back/no-image.jpg`);
+                    } else {
+                        setBACK(`${import.meta.env.VITE_API_IMAGE}${still_path}`);
+                    }
+                    if (poster_path === null) {
+                        setPOSTER(`${import.meta.env.VITE_BACKEND_URL}/images/imgs/serieses/poster/no-image.jpg`);
+                    } else {
+                        setPOSTER(`${import.meta.env.VITE_API_IMAGE}${poster_path}`);
+                    }
                     //ocultar el alerta
                     setAlerta({});
                 }
