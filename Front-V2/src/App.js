@@ -2,21 +2,10 @@ import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Sidebar from "./components/common/Sidebar";
-import Dashboard from "./pages/Dashboard";
+import Inicio from "./pages/Dashboard";
 import Navbar from "./components/common/Navbar";
 import {
-  Brands,
-  Customers,
-  Inbox,
-  Orders,
-  OrderTemplate,
-  Reviews,
   SalesAnalytics,
-  Settings,
-  SingleCustomer,
-  SingleOrder,
-  Suppliers,
-  Transactions,
 } from "./pages";
 import Footer from "./components/common/Footer";
 
@@ -50,20 +39,8 @@ function App() {
       >
         {/* Routes */}
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/customers/:id" element={<SingleCustomer />} />
+          <Route path="/" element={<Inicio />} />
           <Route path="/sales/analysis" element={<SalesAnalytics />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/orders/template" element={<OrderTemplate />} />
-          <Route path="/orders/:id" element={<SingleOrder />} />
-          <Route path="/suppliers" element={<Suppliers />} />
-          <Route path="/transactions" element={<Transactions />} />
-          <Route path="/brands" element={<Brands />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/inbox" element={<Inbox />} />
         </Routes>
         <Footer />
       </Box>

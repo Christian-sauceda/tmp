@@ -1,16 +1,13 @@
 import {
   AppBar,
-  Badge,
   Box,
   IconButton,
   Stack,
   Toolbar,
   Tooltip,
-  Typography,
   useTheme,
 } from "@mui/material";
 import React from "react";
-import { BsBell } from "react-icons/bs";
 import { FiMenu, FiMoon, FiSun } from "react-icons/fi";
 import { useColorTheme } from "../../contexts/ThemeContext";
 import ProfileMenu from "./ProfileMenu";
@@ -20,7 +17,6 @@ const Navbar = ({ sideBarWidth, handleDrawerToggle }) => {
   const theme = useTheme();
 
   const currentTheme = theme.palette.mode;
-
   return (
     <AppBar
       position="fixed"
@@ -61,22 +57,9 @@ const Navbar = ({ sideBarWidth, handleDrawerToggle }) => {
               </IconButton>
             </Tooltip>
 
-            <Typography
-              variant="h5"
-              sx={{ display: { xs: "none", sm: "block" } }}
-            >
-              Dashboard
-            </Typography>
           </Box>
           <Stack direction="row" spacing={1} alignItems="center">
-            <Tooltip title="Notifications" arrow>
-              <IconButton sx={{ fontSize: "20px", color: "text.primary" }}>
-                <Badge color="error" variant="dot">
-                  <BsBell />
-                </Badge>
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Toggle Theme" arrow>
+            <Tooltip title="Cambiar Modo Oscuro/Claro" arrow>
               <IconButton
                 onClick={colorMode.toggleColorMode}
                 sx={{ fontSize: "20px", color: "text.primary" }}

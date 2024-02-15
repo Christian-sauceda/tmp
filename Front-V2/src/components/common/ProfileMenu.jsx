@@ -3,11 +3,8 @@ import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
-import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 
 const ProfileMenu = () => {
@@ -21,7 +18,7 @@ const ProfileMenu = () => {
   };
   return (
     <>
-      <Tooltip title="Account settings" arrow>
+      <Tooltip title="Cerrar Sesion" arrow>
         <IconButton
           onClick={handleClick}
           size="small"
@@ -31,8 +28,7 @@ const ProfileMenu = () => {
           aria-expanded={open ? "true" : undefined}
         >
           <Avatar
-            sx={{ width: 32, height: 32 }}
-            src="/images/avatars/profile-avatar.png"
+            sx={{ width: 25, height: 25 }}
           />
         </IconButton>
       </Tooltip>
@@ -72,29 +68,10 @@ const ProfileMenu = () => {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider />
-        <MenuItem>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Manage Other Accounts
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
+          Salir
         </MenuItem>
       </Menu>
     </>

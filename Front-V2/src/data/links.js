@@ -11,20 +11,6 @@ export const links = [
     url: "/",
   },
   {
-    name: "Products",
-    icon: <FiShoppingBag />,
-    subLinks: [
-      {
-        name: "All Products",
-        url: "/products",
-      },
-      {
-        name: "Add Product",
-        url: "/products/add",
-      },
-    ],
-  },
-  {
     name: "Sales",
     icon: <BsCurrencyDollar />,
     subLinks: [

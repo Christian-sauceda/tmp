@@ -16,7 +16,7 @@ const Footer = () => {
       }}
     >
       <Typography>
-        Created by <span style={{ color: "#027edd" }}>Wabweni Brian</span> | All
+        Created by <span style={{ color: "#027edd" }}>Christian Sauceda</span> | All
         Rights Reserved &copy;
         {new Date().getFullYear()}
       </Typography>
