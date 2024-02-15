@@ -5,21 +5,16 @@ import Sidebar from "./components/common/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/common/Navbar";
 import {
-  AddProduct,
   Brands,
   Customers,
   Inbox,
   Orders,
   OrderTemplate,
-  ProductCategories,
-  Products,
-  ProductSales,
   Reviews,
   SalesAnalytics,
   Settings,
   SingleCustomer,
   SingleOrder,
-  SingleProduct,
   Suppliers,
   Transactions,
 } from "./pages";
@@ -56,14 +51,9 @@ function App() {
         {/* Routes */}
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/add" element={<AddProduct />} />
-          <Route path="/products/:id" element={<SingleProduct />} />
-          <Route path="/products/categories" element={<ProductCategories />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/customers/:id" element={<SingleCustomer />} />
           <Route path="/sales/analysis" element={<SalesAnalytics />} />
-          <Route path="/sales" element={<ProductSales />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/orders/template" element={<OrderTemplate />} />
           <Route path="/orders/:id" element={<SingleOrder />} />

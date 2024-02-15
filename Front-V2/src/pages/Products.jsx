@@ -17,7 +17,7 @@ const Products = () => {
           marginBottom: "16px",
         }}
       >
-        <Typography variant="h6">Products</Typography>
+        <Typography variant="h6">ProductsSSSSSS</Typography>
         <Link to="/products/add" style={{ textDecoration: "none" }}>
           <Button
             variant="contained"
