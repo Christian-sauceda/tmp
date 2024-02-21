@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Sidebar from "./components/common/Sidebar";
 import Inicio from "./pages/Dashboard";
+import NotFound from "./pages/NotFound";
 import Navbar from "./components/common/Navbar";
 import {
   SalesAnalytics,
@@ -39,6 +40,7 @@ function App() {
       >
         {/* Routes */}
         <Routes>
+          <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Inicio />} />
           <Route path="/sales/analysis" element={<SalesAnalytics />} />
         </Routes>

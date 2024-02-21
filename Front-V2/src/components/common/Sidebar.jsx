@@ -1,6 +1,6 @@
 import { Box, Divider, Drawer, List, Toolbar, Typography } from "@mui/material";
 import React from "react";
-import { links } from "../../data/links";
+import { linksInicio, linksContenido, linksReportes } from "../../data/links";
 import SidebarItem from "./SidebarItem";
 import SidebarItemCollapse from "./SidebarItemCollapse";
 
@@ -13,16 +13,53 @@ const Sidebar = ({ window, sideBarWidth, mobileOpen, handleDrawerToggle }) => {
         </Typography>
       </Toolbar>
       <Divider />
-      <List disablePadding>
-        {links?.map((link, index) =>
+      <br></br>
+      <List disablePadding >
+        {linksInicio?.map((link, index) =>
           link?.subLinks ? (
             <SidebarItemCollapse {...link} key={index} />
           ) : (
-            <SidebarItem {...link} key={index} />
+            <SidebarItem  {...link} key={index} />
           )
         )}
       </List>
+      <Divider/>
+      <br></br>
+      <Typography sx={{ fontWeight: "bold", ml: 2 }}>
+        Contenido Multimedia
+      </Typography>
+      <List disablePadding >
+        {linksContenido?.map((link, index) =>
+          link?.subLinks ? (
+            <SidebarItemCollapse {...link} key={index} />
+          ) : (
+            <SidebarItem  {...link} key={index} />
+          )
+        )}
+      </List>
+
+      <br></br>
+      <Typography sx={{ fontWeight: "bold", ml: 2 }}>
+        Reportes
+      </Typography>
+      <List disablePadding >
+        {linksReportes?.map((link, index) =>
+          link?.subLinks ? (
+            <SidebarItemCollapse {...link} key={index} />
+          ) : (
+            <SidebarItem  {...link} key={index} />
+          )
+        )}
+      </List>
+
+            {/* Footer del Sidebar */}
+      <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", color: "#fff", padding: "10px" }}>
+        <Typography variant="caption" align="center">
+          TopMedia+ 
+        </Typography>
+      </div>
     </div>
+    
   );
 
   const container =
