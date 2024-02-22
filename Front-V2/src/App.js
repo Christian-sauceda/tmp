@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Sidebar from "./components/common/Sidebar";
 import Inicio from "./pages/Dashboard";
@@ -18,8 +18,9 @@ function App() {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+   const auth = { COD: false };
   return (
+    <>
     <Box sx={{ display: "flex" }}>
       <Navbar
         sideBarWidth={sideBarWidth}
@@ -41,12 +42,13 @@ function App() {
         {/* Routes */}
         <Routes>
           <Route path="*" element={<NotFound />} />
-          <Route path="/" element={<Inicio />} />
-          <Route path="/sales/analysis" element={<SalesAnalytics />} />
+          <Route path="/" element={<Inicio /> } />
+          <Route path="/admin/movie/add" element={auth?.COD ? <SalesAnalytics /> : <Navigate to="/" />} />
         </Routes>
         <Footer />
       </Box>
     </Box>
+    </>
   );
 }
 
