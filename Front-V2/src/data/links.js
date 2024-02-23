@@ -15,19 +15,19 @@ export const linksContenido = [
     subLinks: [
       {
         name: "Agregar Pelicula",
-        url: "/admin/movie/add",
+        url: "movie/add",
       },
       {
         name: "Lista de Peliculas en Espa\u00f1ol",
-        url: "/admin/movie/es/list",
+        url: "movie/es/list",
       },
       {
         name: "Lista de Peliculas en Ingl\u00e9s",
-        url: "/admin/movie/en/list",
+        url: "movie/en/list",
       },
       {
         name: "Lista de Peliculas para Adultos",
-        url: "/admin/movie/adult/list",
+        url: "movie/adult/list",
       },
     ],
   },
@@ -37,19 +37,19 @@ export const linksContenido = [
     subLinks: [
       {
         name: "Agregar Serie",
-        url: "/admin/serie/add",
+        url: "serie/add",
       },
       {
         name: "agregar Capitulos",
-        url: "/admin/series/addcap",
+        url: "series/addcap",
       },
       {
         name: "Lista de Series en Espa\u00f1ol",
-        url: "/admin/serie/es/list",
+        url: "serie/es/list",
       },
       {
         name: "Lista de Series en Ingl\u00e9s",
-        url: "/admin/serie/en/list",
+        url: "serie/en/list",
       },
     ],
   },
@@ -59,11 +59,11 @@ export const linksContenido = [
     subLinks: [
       {
         name: "Agregar Evento",
-        url: "/admin/event/add",
+        url: "event/add",
       },
       {
         name: "Lista de Eventos",
-        url: "/admin/event/list",
+        url: "event/list",
       },
     ],
   },
@@ -76,7 +76,7 @@ export const linksReportes = [
     subLinks: [
       {
         name: "Generar Reporte",
-        url: "/admin/reportes",
+        url: "reportes",
       },
     ],
   },

@@ -3,8 +3,18 @@ import Box from "@mui/material/Box";
 import Sidebar from "../components/common/Sidebar";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
+import { Outlet, Navigate} from 'react-router-dom'
 
-const AdminLayout = ({ children, sideBarWidth, mobileOpen, handleDrawerToggle }) => {
+const sideBarWidth = 250;
+
+const auth = { COD: true };
+const AdminLayout = () => {
+  
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
   return (
     <Box sx={{ display: "flex" }}>
       <Navbar sideBarWidth={sideBarWidth} handleDrawerToggle={handleDrawerToggle} />
@@ -17,7 +27,8 @@ const AdminLayout = ({ children, sideBarWidth, mobileOpen, handleDrawerToggle })
           width: { xs: "100%", md: `calc(100% - ${sideBarWidth}px)` },
         }}
       >
-        {children}
+          {auth?.COD ? <Outlet /> : <Navigate to="/" />}
+
         <Footer />
       </Box>
     </Box>

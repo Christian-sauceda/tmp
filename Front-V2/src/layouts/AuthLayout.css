@@ -1,0 +1,12 @@
+/* background imagen desde carpeta */
+.bg-image {
+  background-image: url("../assets/img/register_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.bg-color {
+    background-color:#1e293b;
+  }
