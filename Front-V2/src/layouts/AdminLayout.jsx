@@ -7,7 +7,7 @@ import { Outlet, Navigate} from 'react-router-dom'
 
 const sideBarWidth = 250;
 
-const auth = { COD: true };
+const auth = { COD: false };
 const AdminLayout = () => {
   
   const [mobileOpen, setMobileOpen] = React.useState(false);

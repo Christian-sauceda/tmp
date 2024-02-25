@@ -1,14 +1,20 @@
 import * as React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+//layouts
+import AdminLayout from "./layouts/AdminLayout";
+import AuthLayout from "./layouts/AuthLayout";
+//pages auth
+import Login from "./pages/Auth/Login";
+import OlvidePassword from './pages/Auth/OlvidePassword'
+import ConfirmarCuenta from './pages/Auth/ConfirmarCuenta'
+import NuevoPassword from './pages/Auth/NuevoPassword'
+
 import Inicio from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import { SalesAnalytics } from "./pages";
-import AdminLayout from "./layouts/AdminLayout";
-import AuthLayout from "./layouts/AuthLayout";
-import Login from "./pages/Auth/Login";
+
 
 function App() {
-  const auth = { COD: true };
   return (
     <>
       {/* Routes */}
@@ -16,6 +22,9 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<AuthLayout />}>
           <Route index element={<Login />} />
+          <Route path="olvidepassword" element={<OlvidePassword />} />
+          <Route path="olvidepassword/:token" element={<NuevoPassword />} />
+          <Route path="confirm/:id" element={<ConfirmarCuenta />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
