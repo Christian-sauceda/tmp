@@ -3,17 +3,17 @@ import myImage from "../../assets/img/OIP2.png";
 const Login = () => {
   return (
     <>
-      <div className="flex w-1/2 bg-gradient-to-tr from-blue-800 to-teal-600 i justify-around items-center">
-      <div className="flex flex-col justify-center items-center relative overflow-hidden w-full h-auto">
-        <img src={myImage} alt="Descripción de la imagen" className="md:block mx-auto w-64 h-auto" />
-      </div>
+      <div className="hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-teal-600 justify-around items-center">
+        <div className="flex flex-col justify-center items-center relative overflow-hidden w-full h-auto">
+          <img src={myImage} alt="Descripción de la imagen" className="md:block mx-auto w-64 h-auto" />
+        </div>
       </div>
 
-      <div className="flex w-1/2 justify-center items-center bg-white">
+      <div className="flex w-full md:w-1/2 justify-center items-center bg-white">
         <form className="bg-white">
           <h1 className="text-gray-800 font-bold text-2xl mb-1">Hola de Nuevo!</h1>
-          <p className="text-sm font-normal text-gray-600">Bienvenido, Inicia Sesión y Administra</p>
-          <p className="text-sm font-normal text-gray-600 mb-7">el Contenido de <span className="font-bold text-teal-700"> TopMedia+</span></p>
+          <p className="text-sm font-normal text-gray-600">Bienvenido, Inicia Sesión y Administra el Contenido de</p>
+          <p className="text-sm font-normal text-gray-600 mb-7"> <span className="font-bold text-teal-700"> TopMedia+</span></p>
           <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
