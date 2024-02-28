@@ -4,7 +4,7 @@ export const linksInicio = [
   {
     name: "Inicio",
     icon: <FiHome />,
-    url: "/",
+    url: "/admin",
   },
 ];
 

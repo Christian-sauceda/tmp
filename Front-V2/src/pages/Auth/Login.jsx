@@ -1,50 +1,70 @@
 import { Link } from "react-router-dom";
-
+import myImage from "../../assets/img/OIP2.png";
 const Login = () => {
   return (
     <>
-      <div>
-        <h1 className="text-teal-600 font-black text-5xl">
-          Inicia Sesión y Administra el Contenido de
-          <span className="text-black"> TopMedia+</span>
-        </h1>
+      <div className="flex w-1/2 bg-gradient-to-tr from-blue-800 to-teal-600 i justify-around items-center">
+      <div className="flex flex-col justify-center items-center relative overflow-hidden w-full h-auto">
+        <img src={myImage} alt="Descripción de la imagen" className="md:block mx-auto w-64 h-auto" />
       </div>
-      <div className="mt-20 md:mt-5 shadow-lg px-5 py-10 rounded-xl bg-white">
-        <form>
-          <div className="my-5 pt-16 md:pt-0 md:mt-20">
-            <label className="uppercase text-gray-600 block text-xl font-bold">
-              Nombre Usuario:
-            </label>
+      </div>
+
+      <div className="flex w-1/2 justify-center items-center bg-white">
+        <form className="bg-white">
+          <h1 className="text-gray-800 font-bold text-2xl mb-1">Hola de Nuevo!</h1>
+          <p className="text-sm font-normal text-gray-600">Bienvenido, Inicia Sesión y Administra</p>
+          <p className="text-sm font-normal text-gray-600 mb-7">el Contenido de <span className="font-bold text-teal-700"> TopMedia+</span></p>
+          <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 4a4 4 0 11-8 0 4 4 0 018 0zm-2 8a6 6 0 00-6 6h12a6 6 0 00-6-6z"
+                clip-rule="evenodd"
+              />
+            </svg>
             <input
               type="text"
               placeholder="Tu Nombre de Usuario"
-              className="border w-full p-3 rounded-xl mt-3 bg-gray-100"
+              className="pl-2 outline-none border-none"
             />
           </div>
-          <div className="my-5">
-            <label className="uppercase text-gray-600 block text-xl font-bold">
-              Contraseña:
-            </label>
+          <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
             <input
+              className="pl-2 outline-none border-none"
               type="password"
               placeholder="Tu Contraseña"
-              className="border w-full p-3 rounded-xl mt-3 bg-gray-100"
             />
           </div>
-          <input
+          <button
             type="submit"
-            value="Iniciar Sesión"
-            className="bg-teal-600 w-full py-3 px-10 rounded-xl mt-6 text-white uppercase font-bold hover:cursor-pointer hover:bg-teal-700 md:w-auto "
-          />
-        </form>
-        <nav className="mt-10 lg:flex lg:justify-end">
-          <Link
-            className="block text-center my-5 text-gray-500"
-            to="olvidepassword"
+            className="block w-full bg-teal-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
           >
-            Recuperar Contraseña
+            Iniciar Sesión
+          </button>
+          <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">
+          <Link
+          to="olvidepassword"
+          >Recuperar Contraseña
           </Link>
-        </nav>
+          </span>
+        </form>
       </div>
     </>
   );

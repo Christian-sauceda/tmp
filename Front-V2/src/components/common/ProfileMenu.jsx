@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from 'react-router-dom';
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -71,7 +72,7 @@ const ProfileMenu = () => {
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Salir
+          <Link to="/">Salir</Link>
         </MenuItem>
       </Menu>
     </>
