@@ -1,11 +1,54 @@
-import React from 'react'
-
+import { Link } from "react-router-dom";
+import myImage from "../../assets/img/OIP2.png";
 const OlvidePassword = () => {
   return (
     <>
-      <h1>Olvide Password</h1>
-    </>
-  )
-}
+      <div className="hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-teal-600 justify-around items-center">
+        <div className="flex flex-col justify-center items-center relative overflow-hidden w-full h-auto">
+          <img
+            src={myImage}
+            alt="Descripción de la imagen"
+            className="md:block mx-auto w-64 h-auto"
+          />
+        </div>
+      </div>
 
-export default OlvidePassword
+      <div className="flex w-full md:w-1/2 justify-center items-center bg-white">
+        <form className="bg-white">
+          <h1 className="text-gray-800 font-bold text-2xl mb-1">
+            Recupera tu Acceso!
+          </h1>
+          <p className="text-sm font-normal text-gray-600">
+            Ingresa Tu Correo para Recuperar el acceso a
+          </p>
+          <p className="text-sm font-normal text-gray-600 mb-7">
+            {" "}
+            <span className="font-bold text-teal-700"> TopMedia+</span>
+          </p>
+          <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+        </svg>
+            <input
+              type="email"
+              placeholder="Tu Correo Electrónico"
+              className="pl-2 outline-none border-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="block w-full bg-teal-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
+          >
+            Enviar Instrucciones
+          </button>
+          <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">
+            <Link to="/">Regresar</Link>
+          </span>
+        </form>
+      </div>
+    </>
+  );
+};
+
+export default OlvidePassword;
