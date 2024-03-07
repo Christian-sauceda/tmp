@@ -1,18 +1,7 @@
 import { Link } from "react-router-dom";
-import myImage from "../../assets/img/OIP2.png";
 const OlvidePassword = () => {
   return (
     <>
-      <div className="hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-teal-600 justify-around items-center">
-        <div className="flex flex-col justify-center items-center relative overflow-hidden w-full h-auto">
-          <img
-            src={myImage}
-            alt="Descripción de la imagen"
-            className="md:block mx-auto w-64 h-auto"
-          />
-        </div>
-      </div>
-
       <div className="flex w-full md:w-1/2 justify-center items-center bg-white">
         <form className="bg-white">
           <h1 className="text-gray-800 font-bold text-2xl mb-1">
