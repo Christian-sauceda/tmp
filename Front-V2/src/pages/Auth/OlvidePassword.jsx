@@ -34,7 +34,7 @@ const OlvidePassword = () => {
             <span className="font-bold text-teal-700"> TopMedia+</span>
           </p>
           <div
-            className={`flex items-center border-2 py-2 px-3 rounded-2xl mb-4 ${
+            className={`flex items-center border-2 py-2 px-3 rounded-lg mb-1 ${
               formik.touched.EMAIL_USER && formik.errors.EMAIL_USER
                 ? "border-red-500"
                 : "border-teal-600"
@@ -61,6 +61,9 @@ const OlvidePassword = () => {
               {...formik.getFieldProps("EMAIL_USER")}
             />
           </div>
+          <p className="text-xs text-gray-400 ">
+          Debe tener un formato de email válido
+          </p>
           {formik.touched.EMAIL_USER && formik.errors.EMAIL_USER ? (
             <div
               style={{ fontSize: "10px" }}
@@ -71,7 +74,7 @@ const OlvidePassword = () => {
           ) : null}
           <button
             type="submit"
-            className="block w-full bg-teal-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
+            className="block w-full bg-teal-600 mt-4 py-2 rounded-lg text-white font-semibold mb-2"
           >
             Enviar Instrucciones
           </button>

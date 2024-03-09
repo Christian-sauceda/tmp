@@ -5,14 +5,14 @@ import AdminLayout from "./layouts/AdminLayout";
 import AuthLayout from "./layouts/AuthLayout";
 //pages auth
 import Login from "./pages/Auth/Login";
+import Registrar from "./pages/Auth/Registrar";
 import OlvidePassword from './pages/Auth/OlvidePassword'
 import ConfirmarCuenta from './pages/Auth/ConfirmarCuenta'
 import NuevoPassword from './pages/Auth/NuevoPassword'
 
+
 import Inicio from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
-import { SalesAnalytics } from "./pages";
-
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Inicio />} />
-          <Route path="movie/add" element={<SalesAnalytics />} />
+          <Route path="movie/add" element={<Registrar />} />
         </Route>
       </Routes>
     </>
