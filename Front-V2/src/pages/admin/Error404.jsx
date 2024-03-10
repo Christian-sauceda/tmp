@@ -3,53 +3,51 @@ import { Link } from "react-router-dom";
 
 const Error404 = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen overflow-hidden bg-white">
+        <>
             <style>
                 {`
-                    .error-title {
-                        font-size: 40vh; /* Aumenta el tamaño del texto 404 en un 40% */
-                        font-family: sans-serif;
-                        font-weight: bold; /* Hace el texto más grueso */
-                        position: relative;
-                        background: white;
-                        color: black;
-                        margin: 0;
-                        padding: 0;
-                        overflow: hidden;
+                    .gradient-background {
+                        background-size: 200% 200%;
+                        animation: gradient 3s linear infinite;
                     }
 
-                    .error-title:before {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        -webkit-filter: blur(20px);
-                        filter: blur(20px);
-                        top: 0;
-                        left: 0;
-                        width: 80%;
-                        height: 80%;
-                        mix-blend-mode: screen;
-                        background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, #9E2053 1em, orange 50%), repeating-linear-gradient(45deg, #111626, #111626 1em, pink 1em, #571B3D 50%);
-                        background-size: 3em 3em, 2em 2em;
-                        animation-name: ani;
-                        animation-duration: 8s;
-                        animation-timing-function: linear;
-                        animation-iteration-count: infinite;
-                        animation-direction: alternate;
+                    @keyframes gradient {
+                        0% {
+                            background-position: 0% 50%;
+                        }
+                        25% {
+                            background-position: 100% 0%;
+                        }
+                        50% {
+                            background-position: 100% 100%;
+                        }
+                        75% {
+                            background-position: 0% 100%;
+                        }
+                        100% {
+                            background-position: 0% 50%;
+                        }
                     }
-
-                    @keyframes ani {
-                        from {
-                            background-position: 0 0;
-                        }
-                        to {
-                            background-position: 100% 0;
-                        }
                 `}
             </style>
-            <h1 className="error-title">404</h1>
-            <Link to="/admin" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 text-lg font-bold">Ir a la página principal</Link>
-        </div>
+            <div className="flex items-center justify-center w-screen h-screen bg-gradient-to-r from-blue-800 to-teal-600 gradient-background">
+                <div className="px-40 py-20 bg-white rounded-md shadow-xl">
+                    <div className="flex flex-col items-center">
+                        <h1 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-teal-600 hover:from-blue-900 hover:to-teal-800 text-9xl">404</h1>
+                        <h6 className="mb-2 text-2xl font-bold text-center text-black md:text-3xl">
+                            <span className="text-sky-900">Oops!</span> Página no encontrada
+                        </h6>
+                        <p className="mb-8 text-center text-gray-500 md:text-lg">
+                            La página que buscas no existe.
+                        </p>
+                        <Link
+                            to="/admin"
+                            className="px-6 py-2 text-sm font-semibold text-sky-800 hover:text-white hover:bg-sky-900 bg-blue-100"
+                        >Ir a inicio</Link>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };
 

@@ -1,5 +1,7 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 //layouts
 import AdminLayout from "./layouts/AdminLayout";
 import AuthLayout from "./layouts/AuthLayout";
@@ -12,12 +14,12 @@ import NuevoPassword from './pages/Auth/NuevoPassword'
 
 //pages admin
 import Error404 from "./pages/admin/Error404";
-
-import Inicio from "./pages/Dashboard";
+import Inicio from "./pages/admin/Dashboard";
 
 function App() {
   return (
     <>
+      <ToastContainer />
       {/* Routes */}
       <Routes>
         <Route path="*" element={<Error404 />} />

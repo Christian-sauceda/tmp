@@ -32,14 +32,14 @@ export const registro = async (req, res) => {
             } else {
                 if (rows.length > 0) {
                     res.status(400).json({
-                        message: "El Usuario o Correo Ya Está en Uso"
+                        message: "El usuario o correo ya está en uso"
                     });
                 } else {
                     //HASH DE LA CONTRASEÑA
                     bcryptjs.hash(PASSWORD_USER, 10, (err, hash) => {
                         if (err) {
                             res.status(500).json({
-                                message: "Error al Encriptar la Contraseña",
+                                message: "Error al encriptar la contraseña",
                                 err
                             });
                         } else {
@@ -50,7 +50,7 @@ export const registro = async (req, res) => {
                                 (err, rows) => {
                                     if (err) {
                                         res.status(500).json({
-                                            message: "Error al Insertar el Usuario",
+                                            message: "Error al insertar el usuario o ya existe",
                                             err
                                         });
                                     } else {
