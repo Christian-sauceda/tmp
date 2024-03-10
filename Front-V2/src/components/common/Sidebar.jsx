@@ -1,6 +1,6 @@
 import { Box, Divider, Drawer, List, Toolbar, Typography } from "@mui/material";
 import React from "react";
-import { linksInicio, linksContenido, linksReportes } from "../../data/links";
+import { linksInicio, linksContenido, linksReportes, linksUsuarios } from "../../data/links";
 import SidebarItem from "./SidebarItem";
 import SidebarItemCollapse from "./SidebarItemCollapse";
 
@@ -51,6 +51,22 @@ const Sidebar = ({ window, sideBarWidth, mobileOpen, handleDrawerToggle }) => {
           )
         )}
       </List>
+
+      <br></br>
+      <Typography sx={{ fontWeight: "bold", ml: 2 }}>
+        Usuarios
+      </Typography>
+      <List disablePadding >
+        {linksUsuarios?.map((link, index) =>
+          link?.subLinks ? (
+            <SidebarItemCollapse {...link} key={index} /> 
+          ) : (
+            <SidebarItem  {...link} key={index} />
+          )
+        )}
+      </List>
+      <br></br>
+      
 
             {/* Footer del Sidebar */}
       <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", color: "#fff", padding: "10px" }}>

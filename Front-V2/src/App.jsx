@@ -10,16 +10,17 @@ import OlvidePassword from './pages/Auth/OlvidePassword'
 import ConfirmarCuenta from './pages/Auth/ConfirmarCuenta'
 import NuevoPassword from './pages/Auth/NuevoPassword'
 
+//pages admin
+import Error404 from "./pages/admin/Error404";
 
 import Inicio from "./pages/Dashboard";
-import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <>
       {/* Routes */}
       <Routes>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Error404 />} />
         <Route path="/" element={<AuthLayout />}>
           <Route index element={<Login />} />
           <Route path="olvidepassword" element={<OlvidePassword />} />
@@ -29,7 +30,7 @@ function App() {
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Inicio />} />
-          <Route path="movie/add" element={<Registrar />} />
+          <Route path="user/add" element={<Registrar />} />
         </Route>
       </Routes>
     </>

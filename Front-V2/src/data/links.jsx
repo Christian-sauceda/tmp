@@ -10,7 +10,7 @@ export const linksInicio = [
 
 export const linksContenido = [
   {
-    name: "Peliculas | Movies",
+    name: "Peliculas",
     icon: <FiMonitor />,
     subLinks: [
       {
@@ -32,7 +32,7 @@ export const linksContenido = [
     ],
   },
   {
-    name: "Series | TvShows",
+    name: "Series",
     icon: <FiMonitor />,
     subLinks: [
       {
@@ -44,17 +44,17 @@ export const linksContenido = [
         url: "series/addcap",
       },
       {
-        name: "Lista de Series en Espa\u00f1ol",
+        name: "Lista Series en Espa\u00f1ol",
         url: "serie/es/list",
       },
       {
-        name: "Lista de Series en Ingl\u00e9s",
+        name: "Lista Series en Ingl\u00e9s",
         url: "serie/en/list",
       },
     ],
   },
   {
-    name: "Eventos | Events",
+    name: "Eventos",
     icon: <FiDribbble />,
     subLinks: [
       {
@@ -77,6 +77,23 @@ export const linksReportes = [
       {
         name: "Generar Reporte",
         url: "reportes",
+      },
+    ],
+  },
+];
+
+export const linksUsuarios = [
+  {
+    name: "Usuarios",
+    icon: <FiMonitor />,
+    subLinks: [
+      {
+        name: "Agregar Usuario",
+        url: "user/add",
+      },
+      {
+        name: "Lista de Usuarios",
+        url: "user/list",
       },
     ],
   },

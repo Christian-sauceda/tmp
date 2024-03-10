@@ -3,7 +3,7 @@ import { getDesignTokens } from "../theme/themePalettes";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 
-const ColorModeContext = createContext({ toggleColorMode: () => {} });
+const ColorModeContext = createContext({ toggleColorMode: () => {}, mode: 'light' });
 
 export const ThemeToggleProvider = ({ children }) => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -15,15 +15,14 @@ export const ThemeToggleProvider = ({ children }) => {
 
   const colorMode = useMemo(
     () => ({
-      // The dark mode switch would invoke this method
       toggleColorMode: () => {
         setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
       },
+      mode,
     }),
-    []
+    [mode]
   );
 
-  // Update the theme only if the mode changes
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   return (
