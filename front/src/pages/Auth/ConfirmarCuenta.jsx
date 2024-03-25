@@ -1,35 +1,35 @@
-import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import clienteAxios from '../../config/axios'
-import Alerta from '../../components/Alerts/Alerts'
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import clienteAxios from "../../config/axios";
+import Alerta from "../../components/Alerts/Alerts";
 const ConfirmarCuenta = () => {
-  const [cuentaConfirmada, setCuentaConfirmada] = useState(false)
-  const [cargando, setCargando] = useState(true)
-  const [alerta, setAlerta] = useState({})
+  const [cuentaConfirmada, setCuentaConfirmada] = useState(false);
+  const [cargando, setCargando] = useState(true);
+  const [alerta, setAlerta] = useState({});
 
   const params = useParams();
-  const { id } = params
+  const { id } = params;
 
   useEffect(() => {
     const confirmarCuenta = async () => {
       try {
-        const url = `/confirmar/${id}`
-        const { data } = await clienteAxios.get(url)
-        setCuentaConfirmada(true)
+        const url = `/confirmar/${id}`;
+        const { data } = await clienteAxios.get(url);
+        setCuentaConfirmada(true);
         setAlerta({
           msg: data.message,
-          error: false
-        })
+          error: false,
+        });
       } catch (error) {
         setAlerta({
           msg: error.response.data.message,
-          error: true
-        })
+          error: true,
+        });
       }
-      setCargando(false)
-    }
-    confirmarCuenta()
-  }, [])
+      setCargando(false);
+    };
+    confirmarCuenta();
+  }, []);
 
   return (
     <>
@@ -39,18 +39,18 @@ const ConfirmarCuenta = () => {
           <span className="text-black"> TopMedia+</span>
         </h1>
       </div>
-      <div className='mt-20 md:mt-5 shadow-lg px-5 py-10 rounded-xl bg-white'>
-        {!cargando && <Alerta
-          alerta={alerta}
-        />}
+      <div className="mt-20 md:mt-5 shadow-lg px-5 py-10 rounded-xl bg-white">
+        {!cargando && <Alerta alerta={alerta} />}
         {cuentaConfirmada && (
-          <Link
-          className='block text-center my-5 text-gray-500'
-          to='/'>Iniciar Sesion</Link>
+          <div className="text-center">
+            <Link className="block text-center my-5 text-gray-500" to="/">
+              Iniciar Sesion
+            </Link>
+          </div>
         )}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ConfirmarCuenta
+export default ConfirmarCuenta;

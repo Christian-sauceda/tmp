@@ -5,7 +5,10 @@ import Banner from "../../components/partials/Banner";
 import FormRegistrar from "../../components/forms/FormRegistar";
 import validationsSchemaRegistrar from "../../helpers/validations/ValidationsRegistrar";
 import { useColorTheme } from "../../contexts/ThemeContext";
-import { enviarDatosAlServidor, handleErrorResponse } from "../../helpers/utils/UtilsRegistrar";
+import {
+  enviarDatosAlServidor,
+  handleErrorResponse,
+} from "../../helpers/utils/UtilsRegistrar";
 
 const Registrar = () => {
   const { mode } = useColorTheme();
