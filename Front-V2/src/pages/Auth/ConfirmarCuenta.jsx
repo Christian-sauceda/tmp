@@ -7,7 +7,6 @@ const ConfirmarCuenta = () => {
   const [cuentaConfirmada, setCuentaConfirmada] = useState(false);
   const [cargando, setCargando] = useState(true);
   const [alerta, setAlerta] = useState({});
-
   const params = useParams();
   const { id } = params;
 

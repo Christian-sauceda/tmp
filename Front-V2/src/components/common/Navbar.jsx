@@ -1,20 +1,14 @@
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Stack,
-  Toolbar,
-  Tooltip,
-  useTheme,
-} from "@mui/material";
-import React from "react";
+import { AppBar, Box, IconButton, Stack, Toolbar, Tooltip, useTheme } from "@mui/material";
 import { FiMenu, FiMoon, FiSun } from "react-icons/fi";
 import { useColorTheme } from "../../contexts/ThemeContext";
 import ProfileMenu from "./ProfileMenu";
+import SaludoHoraDelDia from "../partials/Saludo";
+import { useLocation } from "react-router-dom";
 
 const Navbar = ({ sideBarWidth, handleDrawerToggle }) => {
   const colorMode = useColorTheme();
   const theme = useTheme();
+  const location = useLocation();
 
   const currentTheme = theme.palette.mode;
   return (
@@ -31,6 +25,7 @@ const Navbar = ({ sideBarWidth, handleDrawerToggle }) => {
       }}
     >
       <Toolbar>
+
         <Box
           sx={{
             display: "flex",
@@ -39,6 +34,7 @@ const Navbar = ({ sideBarWidth, handleDrawerToggle }) => {
             width: "100%",
           }}
         >
+        
           <Box
             sx={{
               display: "flex",
@@ -46,6 +42,7 @@ const Navbar = ({ sideBarWidth, handleDrawerToggle }) => {
               gap: 1,
             }}
           >
+
             <Tooltip title="Menu" arrow>
               <IconButton
                 aria-label="open drawer"
@@ -56,7 +53,7 @@ const Navbar = ({ sideBarWidth, handleDrawerToggle }) => {
                 <FiMenu />
               </IconButton>
             </Tooltip>
-
+            {location.pathname === "/admin" && <SaludoHoraDelDia />}
           </Box>
           <Stack direction="row" spacing={1} alignItems="center">
             <Tooltip title="Cambiar Modo Oscuro/Claro" arrow>

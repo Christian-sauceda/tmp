@@ -1,9 +1,15 @@
-import { FiHome, FiMonitor, FiDribbble } from "react-icons/fi";
+import { FiGrid, FiTv, FiYoutube, FiDribbble, FiTrendingUp, FiUser } from "react-icons/fi";
+
+
+export const optionsRegistro = [
+  { value: "1", label: "Administrador" },
+  { value: "2", label: "Manager" },
+];
 
 export const linksInicio = [
   {
     name: "Inicio",
-    icon: <FiHome />,
+    icon: <FiGrid  />,
     url: "/admin",
   },
 ];
@@ -11,9 +17,10 @@ export const linksInicio = [
 export const linksContenido = [
   {
     name: "Peliculas",
-    icon: <FiMonitor />,
+    icon: <FiTv />,
     subLinks: [
       {
+        icon: <FiTv />,
         name: "Agregar Pelicula",
         url: "movie/add",
       },
@@ -33,7 +40,7 @@ export const linksContenido = [
   },
   {
     name: "Series",
-    icon: <FiMonitor />,
+    icon: <FiYoutube  />,
     subLinks: [
       {
         name: "Agregar Serie",
@@ -72,7 +79,7 @@ export const linksContenido = [
 export const linksReportes = [
   {
     name: "Reportes",
-    icon: <FiMonitor />,
+    icon: <FiTrendingUp  />,
     subLinks: [
       {
         name: "Generar Reporte",
@@ -85,7 +92,7 @@ export const linksReportes = [
 export const linksUsuarios = [
   {
     name: "Usuarios",
-    icon: <FiMonitor />,
+    icon: <FiUser  />,
     subLinks: [
       {
         name: "Agregar Usuario",

@@ -4,16 +4,16 @@ import { toast } from "react-toastify";
 
 export const enviarDatosAlServidor = async (values) => {
   try {
-    const url = "/registro"
+    const url = "/olvide-password"
     const response = await clienteAxios.post(url, values);
-    toast.success("Usuario creado correctamente, Revisa tu correo");
+    toast.success(response.data.message)
     return response.data;
   } catch (error) {
     if (!error.response || error.response.status !== 400) {
       throw error;
     }
     throw error;
-  }
+}
 };
 
 
@@ -23,7 +23,7 @@ export const handleErrorResponse = (error) => {
     toast.error(errorMessage);
   } else if (error.response) {
     const errorMessage = error.response.data.message || "Error al enviar datos";
-    toast.warning(errorMessage);
+    toast.error(errorMessage);
   } else {
     toast.info("Error de red o servidor no disponible");
   }

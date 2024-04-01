@@ -1,6 +1,5 @@
 // Registrar.jsx
 import { useFormik } from "formik";
-
 import Banner from "../../components/partials/Banner";
 import FormRegistrar from "../../components/forms/FormRegistar";
 import validationsSchemaRegistrar from "../../helpers/validations/ValidationsRegistrar";
@@ -28,6 +27,7 @@ const Registrar = () => {
         formik.resetForm();
       } catch (error) {
         handleErrorResponse(error);
+        console.error(error);
       }
     },
   });

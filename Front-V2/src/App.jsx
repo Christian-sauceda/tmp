@@ -1,16 +1,17 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 //layouts
 import AdminLayout from "./layouts/AdminLayout";
 import AuthLayout from "./layouts/AuthLayout";
 //pages auth
 import Login from "./pages/Auth/Login";
 import Registrar from "./pages/Auth/Registrar";
-import OlvidePassword from './pages/Auth/OlvidePassword'
-import ConfirmarCuenta from './pages/Auth/ConfirmarCuenta'
-import NuevoPassword from './pages/Auth/NuevoPassword'
+import OlvidePassword from "./pages/Auth/OlvidePassword";
+import ConfirmarCuenta from "./pages/Auth/ConfirmarCuenta";
+import NuevoPassword from "./pages/Auth/NuevoPassword";
 
 //pages admin
 import Error404 from "./pages/admin/Error404";
@@ -19,7 +20,19 @@ import Inicio from "./pages/admin/Dashboard";
 function App() {
   return (
     <>
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition={Bounce}
+      />
       {/* Routes */}
       <Routes>
         <Route path="*" element={<Error404 />} />
@@ -30,7 +43,7 @@ function App() {
           <Route path="confirm/:id" element={<ConfirmarCuenta />} />
         </Route>
 
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route path="/admin/*" element={<AdminLayout />}>
           <Route index element={<Inicio />} />
           <Route path="user/add" element={<Registrar />} />
         </Route>

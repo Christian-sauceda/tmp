@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import {
+  enviarDatosAlServidor,
+  handleErrorResponse,
+} from "../../helpers/utils/UtilsRecuperar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
+import ValidationIcon from "../../components/partials/ValidationIcon";
 
 const OlvidePassword = () => {
   const formik = useFormik({
@@ -11,11 +18,17 @@ const OlvidePassword = () => {
       EMAIL_USER: Yup.string()
         .email("Ingresa un correo electrónico válido")
         .required("El correo electrónico es requerido")
-        //que termine con .com 
+        //que termine con .com
         .matches(/.com$/, "Ingresa un correo electrónico válido"),
     }),
-    onSubmit: (values) => {
-      console.log(values); // Puedes realizar acciones adicionales, como enviar una solicitud para restablecer la contraseña.
+    onSubmit: async (values) => {
+      try {
+        await enviarDatosAlServidor(values);
+        formik.resetForm();
+      } catch (error) {
+        handleErrorResponse(error);
+        console.error(error);
+      }
     },
   });
 
@@ -34,36 +47,26 @@ const OlvidePassword = () => {
             <span className="font-bold text-teal-700"> TopMedia+</span>
           </p>
           <div
-            className={`flex items-center border-2 py-2 px-3 rounded-lg mb-1 ${
+            className={`relative flex items-center border-2 py-2 px-3 rounded-lg mb-1 ${
               formik.touched.EMAIL_USER && formik.errors.EMAIL_USER
                 ? "border-red-500"
                 : "border-teal-600"
             }`}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-              />
-            </svg>
+            <FontAwesomeIcon icon={faAt} className="text-gray-400 h-5 w-5" />
             <input
               type="text"
               placeholder="Tu Correo Electrónico"
               className="pl-2 outline-none border-none flex-1"
               {...formik.getFieldProps("EMAIL_USER")}
             />
+            <ValidationIcon
+              touched={formik.touched.EMAIL_USER}
+              error={formik.errors.EMAIL_USER}
+              className="mt-5 absolute right-3 top-1" 
+            />
           </div>
-          <p className="text-xs text-gray-400 ">
-          Debe tener un formato de email válido
-          </p>
+
           {formik.touched.EMAIL_USER && formik.errors.EMAIL_USER ? (
             <div
               style={{ fontSize: "10px" }}

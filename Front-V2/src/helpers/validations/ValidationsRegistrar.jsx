@@ -1,7 +1,9 @@
 import * as Yup from "yup";
 
 const validationsSchemaRegistrar = Yup.object({
-  USER_NAME: Yup.string().required("El nombre de usuario es requerido"),
+  USER_NAME: Yup.string().required("El nombre de usuario es requerido")
+    .min(3, "El nombre de usuario debe tener al menos 3 caracteres")
+    .max(15, "El nombre de usuario debe tener como máximo 15 caracteres"),
   EMAIL_USER: Yup.string()
     .email("Ingresa un correo electrónico válido")
     .required("El correo electrónico es requerido")
