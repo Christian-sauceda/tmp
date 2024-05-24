@@ -21,7 +21,7 @@ const FormLogin = ({ formik }) => {
             : "border-2 border-teal-600"
         }`}
       >
-          <FontAwesomeIcon icon={faUser} className="text-gray-400 h-5 w-5" />
+        <FontAwesomeIcon icon={faUser} className="text-gray-400 h-5 w-5" />
         <input
           className="pl-2 outline-none border-none bg-transparent text-gray-800 flex-1"
           type="text"
@@ -36,14 +36,16 @@ const FormLogin = ({ formik }) => {
       <p className="text-xs text-gray-400 ">
         Debe tener entre 4 y 10 caracteres
       </p>
-      {formik.touched.USER_NAME && formik.errors.USER_NAME ? (
-        <div
-          style={{ fontSize: "10px" }}
-          className="font-bold text-red-500 mt-0"
-        >
-          {formik.errors.USER_NAME}
-        </div>
-      ) : null}
+      <div style={{ minHeight: "20px" }}>
+        {formik.touched.USER_NAME && formik.errors.USER_NAME ? (
+          <div
+            style={{ fontSize: "10px" }}
+            className="font-bold text-red-500 mt-0"
+          >
+            {formik.errors.USER_NAME}
+          </div>
+        ) : null}
+      </div>
 
       <div
         className={`relative flex items-center mt-2 py-2 px-3 rounded-lg mb-1 ${
@@ -67,14 +69,16 @@ const FormLogin = ({ formik }) => {
       <p className="text-xs text-gray-400 ">
         Debe tener entre 6 y 15 caracteres
       </p>
-      {formik.touched.PASSWORD && formik.errors.PASSWORD ? (
-        <div
-          style={{ fontSize: "10px" }}
-          className="font-bold text-red-500 mt-0"
-        >
-          {formik.errors.PASSWORD}
-        </div>
-      ) : null}
+      <div style={{ minHeight: "20px" }}>
+        {formik.touched.PASSWORD && formik.errors.PASSWORD ? (
+          <div
+            style={{ fontSize: "10px" }}
+            className="font-bold text-red-500 mt-0"
+          >
+            {formik.errors.PASSWORD}
+          </div>
+        ) : null}
+      </div>
       <button
         type="submit"
         className="block w-full bg-teal-600 mt-4 py-2 rounded-lg text-white font-semibold mb-2"

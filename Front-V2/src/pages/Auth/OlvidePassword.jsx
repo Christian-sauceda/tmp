@@ -67,14 +67,16 @@ const OlvidePassword = () => {
             />
           </div>
 
-          {formik.touched.EMAIL_USER && formik.errors.EMAIL_USER ? (
-            <div
-              style={{ fontSize: "10px" }}
-              className="font-bold text-red-500 mt-0"
-            >
-              {formik.errors.EMAIL_USER}
-            </div>
-          ) : null}
+          <div style={{ minHeight: "20px" }}>
+            {formik.touched.EMAIL_USER && formik.errors.EMAIL_USER ? (
+              <div
+                style={{ fontSize: "10px" }}
+                className="font-bold text-red-500 mt-0"
+              >
+                {formik.errors.EMAIL_USER}
+              </div>
+            ) : null}
+          </div>
           <button
             type="submit"
             className="block w-full bg-teal-600 mt-4 py-2 rounded-lg text-white font-semibold mb-2"

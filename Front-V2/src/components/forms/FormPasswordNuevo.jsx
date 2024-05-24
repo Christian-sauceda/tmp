@@ -23,26 +23,28 @@ const FormPasswordNuevo = ({ formik }) => {
               : "border-2 border-teal-600"
           }`}
         >
-            <FontAwesomeIcon icon={faLock} className="text-gray-400 h-5 w-5" />
+          <FontAwesomeIcon icon={faLock} className="text-gray-400 h-5 w-5" />
           <input
-          className="pl-2 outline-none border-none bg-transparent text-gray-800 flex-grow"
+            className="pl-2 outline-none border-none bg-transparent text-gray-800 flex-grow"
             type="password"
             placeholder="Tu Nueva Contraseña"
             {...formik.getFieldProps("password")}
           />
           <ValidationIcon
-          touched={formik.touched.password}
-          error={formik.errors.password}
-        />
+            touched={formik.touched.password}
+            error={formik.errors.password}
+          />
         </div>
-        {formik.touched.password && formik.errors.password && (
-          <div
-            style={{ fontSize: "10px" }}
-            className="font-bold text-red-500 mt-0"
-          >
-            {formik.errors.password}
-          </div>
-        )}
+        <div style={{ minHeight: "20px" }}>
+          {formik.touched.password && formik.errors.password && (
+            <div
+              style={{ fontSize: "10px" }}
+              className="font-bold text-red-500 mt-0"
+            >
+              {formik.errors.password}
+            </div>
+          )}
+        </div>
       </div>
       <button
         type="submit"
