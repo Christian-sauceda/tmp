@@ -150,6 +150,7 @@ const FormRegistrar = ({ formik, dark }) => (
           autoComplete="new-password"
           {...formik.getFieldProps("PASSWORD_CONFIRM")}
         />
+        
         <ValidationIcon
           touched={formik.touched.PASSWORD_CONFIRM}
           error={formik.errors.PASSWORD_CONFIRM}
