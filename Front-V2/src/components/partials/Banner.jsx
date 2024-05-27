@@ -26,7 +26,7 @@ const Banner = ({ title, subtitle }) => {
       </style>
       <div className="rounded-3xl gradient-background h-1/4 flex flex-col items-center justify-center text-center">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-16">{title}</h1>
-        <p className="text-white mt-2">{subtitle}</p>
+        <p className="text-white mt-2 mb-6">{subtitle}</p>
       </div>
     </>
   );

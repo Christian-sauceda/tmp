@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Sidebar from "../components/common/Sidebar";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
-import { Outlet, Navigate} from 'react-router-dom'
+import { Outlet, Navigate } from 'react-router-dom';
+import useAuth from "../hooks/useAuth";
 
-const sideBarWidth = 250;
+const sideBarWidth = 240;
 
-const auth = { COD: true };
 const AdminLayout = () => {
-  
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { auth, cargando } = useAuth();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  if (cargando) return 'Cargando...';
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
   return (
     <Box sx={{ display: "flex" }}>
       <Navbar sideBarWidth={sideBarWidth} handleDrawerToggle={handleDrawerToggle} />
@@ -27,8 +30,7 @@ const AdminLayout = () => {
           width: { xs: "100%", md: `calc(100% - ${sideBarWidth}px)` },
         }}
       >
-          {auth?.COD ? <Outlet /> : <Navigate to="/" />}
-
+        {auth?.COD ? <Outlet /> : <Navigate to="/" />} 
         <Footer />
       </Box>
     </Box>

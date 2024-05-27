@@ -162,13 +162,14 @@ export const login = (req, res, next) => {
                   NAME: result[0].USER_NAME,
                   TYPE: result[0].TYPE_USER,
                 },
-                "secret",
+                //
+                "topmediaplus",
                 {
                   expiresIn: "8h"
                 }
               );
               return res.json({
-                message: "LOGGED IN SUCCESSFULLY!",
+                message: "Has iniciado sesión correctamente!",
                 COD: result[0].COD_USER,
                 NAME: result[0].USER_NAME,
                 TYPE: result[0].TYPE_USER,
@@ -206,7 +207,7 @@ export const olvidePassword = async (req, res) => {
             // si no existe el usuario
             if (rows.length === 0) {
                 return res.status(400).json({
-                    message: "El Usuario no Existe"
+                    message: "El Usuario no Existe o Sin Confirmar"
                 });
             } else {
                 try {

@@ -7,8 +7,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Logout from "@mui/icons-material/Logout";
+import useAuth from "../../hooks/useAuth";
 
 const ProfileMenu = () => {
+  const { cerrarSesion } = useAuth();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -68,11 +70,15 @@ const ProfileMenu = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem>
+        <MenuItem
+        
+        >
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          <Link to="/">Salir</Link>
+          <Link to="/" onClick={cerrarSesion}>
+            Cerrar Sesion
+          </Link>
         </MenuItem>
       </Menu>
     </>

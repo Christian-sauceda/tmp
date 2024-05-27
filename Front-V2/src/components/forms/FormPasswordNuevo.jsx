@@ -5,14 +5,11 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 const FormPasswordNuevo = ({ formik }) => {
   return (
     <form onSubmit={formik.handleSubmit}>
-      <h1 className="text-gray-800 font-bold text-2xl mb-1">
-        Restablece tu contraseña!
+      <h1 className="pb-4 text-center text-gray-800 font-bold text-2xl mb-1">
+      ¡Restablece tu contraseña!
       </h1>
-      <p className="text-sm font-normal text-gray-600">
+      <p className="pb-4 text-center text-sm font-normal text-gray-600">
         Restablece tu contraseña y no pierdas el acceso a
-      </p>
-      <p className="text-sm font-normal text-gray-600 mb-2">
-        {" "}
         <span className="font-bold text-teal-700"> TopMedia+</span>
       </p>
       <div className="my-5 relative">
@@ -35,6 +32,9 @@ const FormPasswordNuevo = ({ formik }) => {
             error={formik.errors.password}
           />
         </div>
+        <p className="text-xs text-gray-400 ">
+        *La contraseña es obligatoria
+      </p>
         <div style={{ minHeight: "20px" }}>
           {formik.touched.password && formik.errors.password && (
             <div

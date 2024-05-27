@@ -7,21 +7,19 @@ import {
   ListItemText,
 } from "@mui/material";
 import React from "react";
-import { useEffect } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { NavLink, useLocation } from "react-router-dom";
 
-const SidebarItemCollapse = ({ name, icon, url, subLinks }) => {
-  const [open, setOpen] = React.useState(false);
+const SidebarItemCollapse = ({ name, icon, url, subLinks, isOpen, onClick }) => {
   const currentPath = useLocation().pathname;
 
-  useEffect(() => {
+  React.useEffect(() => {
     subLinks.forEach((link) => {
       if (currentPath === link.url) {
-        setOpen(true);
+        onClick();
       }
     });
-  }, [currentPath, subLinks]);
+  }, [currentPath, subLinks, onClick]);
 
   const CustomListItemText = styled(ListItemText)({
     fontSize: "10px !important",
@@ -42,7 +40,7 @@ const SidebarItemCollapse = ({ name, icon, url, subLinks }) => {
   return (
     <>
       <ListItemButton
-        onClick={() => setOpen(!open)}
+        onClick={onClick}
         sx={{
           "&:hover": { backgroundColor: "sidebar.hoverBg" },
           paddingY: "8px",
@@ -51,9 +49,9 @@ const SidebarItemCollapse = ({ name, icon, url, subLinks }) => {
       >
         <ListItemIcon sx={{ color: "sidebar.textColor" }}>{icon}</ListItemIcon>
         <ListItemText primary={name} sx={{ ml: "-10px" }} />
-        {open ? <FiChevronUp /> : <FiChevronDown />}
+        {isOpen ? <FiChevronUp /> : <FiChevronDown />}
       </ListItemButton>
-      <Collapse in={open} timeout="auto">
+      <Collapse in={isOpen} timeout="auto">
         <List>
           {subLinks.map(({ name, url }, index) => (
             <NavLink

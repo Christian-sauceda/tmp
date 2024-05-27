@@ -6,12 +6,9 @@ import ValidationIcon from "../partials/ValidationIcon";
 const FormLogin = ({ formik }) => {
   return (
     <form className="bg-white" onSubmit={formik.handleSubmit}>
-      <h1 className="text-gray-800 font-bold text-2xl mb-1">Hola de Nuevo!</h1>
-      <p className="text-sm font-normal text-gray-600">
+      <h1 className="pb-4 text-gray-800 font-bold text-center text-2xl mb-1">Hola de Nuevo!</h1>
+      <p className="pb-4 text-sm text-center font-normal text-gray-600">
         Bienvenido, Inicia Sesión y Administra el Contenido de
-      </p>
-      <p className="text-sm font-normal text-gray-600 mb-2">
-        {" "}
         <span className="font-bold text-teal-700"> TopMedia+</span>
       </p>
       <div
@@ -34,7 +31,7 @@ const FormLogin = ({ formik }) => {
         />
       </div>
       <p className="text-xs text-gray-400 ">
-        Debe tener entre 4 y 10 caracteres
+        *El nombre es obligatorio
       </p>
       <div style={{ minHeight: "20px" }}>
         {formik.touched.USER_NAME && formik.errors.USER_NAME ? (
@@ -67,7 +64,7 @@ const FormLogin = ({ formik }) => {
         />
       </div>
       <p className="text-xs text-gray-400 ">
-        Debe tener entre 6 y 15 caracteres
+        *La contraseña es obligatoria
       </p>
       <div style={{ minHeight: "20px" }}>
         {formik.touched.PASSWORD && formik.errors.PASSWORD ? (

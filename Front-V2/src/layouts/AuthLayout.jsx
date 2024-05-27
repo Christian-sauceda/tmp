@@ -1,8 +1,9 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import myImage from "../assets/img/OIP2.png";
-
+import useAuth from "../hooks/useAuth";
 const AuthLayout = () => {
+const { auth } = useAuth();
   return (
     <>
       <style>
@@ -31,8 +32,8 @@ const AuthLayout = () => {
           }
         `}
       </style>
-      <main className="h-screen flex">
-        <div className="hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-teal-600 justify-around items-center gradient-background">
+      <main className="bg-white h-screen flex flex-col md:flex-row">
+        <div className="flex w-full md:w-2/3 bg-gradient-to-tr from-blue-800 to-teal-600 justify-around items-center gradient-background md:mr-8 mb-8 md:mb-0">
           <div className="flex flex-col justify-center items-center relative overflow-hidden w-full h-auto">
             <img
               src={myImage}
@@ -41,7 +42,11 @@ const AuthLayout = () => {
             />
           </div>
         </div>
-        <Outlet />
+        <div className="flex w-full md:w-1/2 justify-center items-center md:ml-8">
+          <div className="w-full max-w-4xl flex justify-center items-center">
+            {!auth?.COD ? <Outlet /> : <Navigate to="/admin" />}
+          </div>
+        </div>
       </main>
     </>
   );

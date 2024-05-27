@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { AuthProvider } from "./contexts/AuthProvider";
 //layouts
 import AdminLayout from "./layouts/AdminLayout";
 import AuthLayout from "./layouts/AuthLayout";
@@ -16,6 +16,15 @@ import NuevoPassword from "./pages/Auth/NuevoPassword";
 //pages admin
 import Error404 from "./pages/admin/Error404";
 import Inicio from "./pages/admin/Dashboard";
+
+// pages moviesES
+import ListMoviesES from "./pages/admin/MoviesES/ListMoviesEs";
+
+// pages moviesEN
+import ListMoviesEN from "./pages/admin/MoviesEN/ListMoviesEn";
+
+// pages moviesAD
+import ListMoviesAD from "./pages/admin/MoviesAD/ListMoviesAd";
 
 function App() {
   return (
@@ -33,7 +42,10 @@ function App() {
         theme="colored"
         transition={Bounce}
       />
+          <BrowserRouter>
+
       {/* Routes */}
+      <AuthProvider>
       <Routes>
         <Route path="*" element={<Error404 />} />
         <Route path="/" element={<AuthLayout />}>
@@ -45,9 +57,14 @@ function App() {
 
         <Route path="/admin/*" element={<AdminLayout />}>
           <Route index element={<Inicio />} />
+          <Route path="movie/es/list" element={<ListMoviesES />} />
+          <Route path="movie/en/list" element={<ListMoviesEN />} />
+          <Route path="movie/adult/list" element={<ListMoviesAD />} />
           <Route path="user/add" element={<Registrar />} />
         </Route>
       </Routes>
+      </AuthProvider>
+      </BrowserRouter>
     </>
   );
 }

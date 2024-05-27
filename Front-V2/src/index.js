@@ -1,5 +1,4 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router } from "react-router-dom";
 import "./styles/index.css";
 import App from "./App";
 import { ThemeToggleProvider } from "./contexts/ThemeContext";
@@ -9,8 +8,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ThemeToggleProvider>
     <CssBaseline />
-    <Router>
       <App />
-    </Router>
   </ThemeToggleProvider>
 );

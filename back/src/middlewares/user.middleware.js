@@ -9,11 +9,11 @@ const checkAuth = (req, res, next) => {
     ) {
         try {
             token = req.headers.authorization.split(' ')[1]
-            const decoded = jwt.verify(token, 'secret');
+            const decoded = jwt.verify(token, 'topmediaplus');
             req.user = decoded;
             return next()
         } catch (error) {
-            const e = new Error("FORBIDDEN");
+            const e = new Error("Acceso prohibido");
             return res.status(403).json({ message: e.message });
         }
     }

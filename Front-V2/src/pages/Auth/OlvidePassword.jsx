@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 import {
   enviarDatosAlServidor,
   handleErrorResponse,
-} from "../../helpers/utils/UtilsRecuperar";
+} from "../../helpers/utils/UtilsEnviarDatosAlServidor.jsx";
+import validationsSchemaOlvideOassword from "../../helpers/validations/ValidationsOlvidePassword";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
 import ValidationIcon from "../../components/partials/ValidationIcon";
@@ -14,16 +14,11 @@ const OlvidePassword = () => {
     initialValues: {
       EMAIL_USER: "",
     },
-    validationSchema: Yup.object({
-      EMAIL_USER: Yup.string()
-        .email("Ingresa un correo electrónico válido")
-        .required("El correo electrónico es requerido")
-        //que termine con .com
-        .matches(/.com$/, "Ingresa un correo electrónico válido"),
-    }),
+    validationSchema: validationsSchemaOlvideOassword,
     onSubmit: async (values) => {
       try {
-        await enviarDatosAlServidor(values);
+        const urlOlvidePassword = "/olvide-password";
+        await enviarDatosAlServidor(urlOlvidePassword, values);
         formik.resetForm();
       } catch (error) {
         handleErrorResponse(error);
@@ -36,14 +31,12 @@ const OlvidePassword = () => {
     <>
       <div className="flex w-full md:w-1/2 justify-center items-center bg-white">
         <form className="bg-white" onSubmit={formik.handleSubmit}>
-          <h1 className="text-gray-800 font-bold text-2xl mb-1">
+          <h1 className="pb-4 text-center text-gray-800 font-bold text-2xl mb-1">
             Recupera tu Acceso!
           </h1>
-          <p className="text-sm font-normal text-gray-600">
+          <p className="pb-4 text-center text-sm font-normal text-gray-600">
             Ingresa Tu Correo para Recuperar el acceso a
-          </p>
-          <p className="text-sm font-normal text-gray-600 mb-7">
-            {" "}
+          
             <span className="font-bold text-teal-700"> TopMedia+</span>
           </p>
           <div
@@ -66,7 +59,9 @@ const OlvidePassword = () => {
               className="mt-5 absolute right-3 top-1" 
             />
           </div>
-
+          <p className="text-xs text-gray-400 ">
+        *El correo es obligatorio
+      </p>
           <div style={{ minHeight: "20px" }}>
             {formik.touched.EMAIL_USER && formik.errors.EMAIL_USER ? (
               <div

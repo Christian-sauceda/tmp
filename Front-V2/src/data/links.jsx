@@ -25,15 +25,15 @@ export const linksContenido = [
         url: "movie/add",
       },
       {
-        name: "Lista de Peliculas en Espa\u00f1ol",
+        name: "Catálogo películas en espa\u00f1ol",
         url: "movie/es/list",
       },
       {
-        name: "Lista de Peliculas en Ingl\u00e9s",
+        name: "Catálogo películas en Ingl\u00e9s",
         url: "movie/en/list",
       },
       {
-        name: "Lista de Peliculas para Adultos",
+        name: "Catálogo películas Adultos",
         url: "movie/adult/list",
       },
     ],
@@ -51,11 +51,11 @@ export const linksContenido = [
         url: "series/addcap",
       },
       {
-        name: "Lista Series en Espa\u00f1ol",
+        name: "Catálogo Series en Espa\u00f1ol",
         url: "serie/es/list",
       },
       {
-        name: "Lista Series en Ingl\u00e9s",
+        name: "Catálogo Series en Ingl\u00e9s",
         url: "serie/en/list",
       },
     ],
@@ -69,7 +69,7 @@ export const linksContenido = [
         url: "event/add",
       },
       {
-        name: "Lista de Eventos",
+        name: "Catálogo de Eventos",
         url: "event/list",
       },
     ],
@@ -99,7 +99,7 @@ export const linksUsuarios = [
         url: "user/add",
       },
       {
-        name: "Lista de Usuarios",
+        name: "Catálogo de Usuarios",
         url: "user/list",
       },
     ],

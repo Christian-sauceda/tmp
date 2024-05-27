@@ -147,6 +147,7 @@ const FormRegistrar = ({ formik, dark }) => (
               : "border-gray-300"
           } appearance-none focus:outline-none focus:border-teal-600 peer`}
           placeholder=" "
+          autoComplete="new-password"
           {...formik.getFieldProps("PASSWORD_CONFIRM")}
         />
         <ValidationIcon
