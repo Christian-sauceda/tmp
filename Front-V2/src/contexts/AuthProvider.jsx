@@ -1,10 +1,12 @@
 import { useState, useEffect, createContext } from "react";
 import clienteAxios from "../config/axios";
+
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
     const [cargando, setCargando] = useState(true);
     const [auth, setAuth] = useState({});
+
     useEffect(() => {
         const autenticarUsuario = async () => {
             const token = localStorage.getItem("tmp_token");
@@ -19,7 +21,7 @@ const AuthProvider = ({ children }) => {
                 }
             }
             try {
-                const { data } = await clienteAxios('/perfil', config)
+                const { data } = await clienteAxios('/perfil', config);
                 setAuth(data);
             } catch (error) {
                 console.log(error.response.data.message);
@@ -29,26 +31,26 @@ const AuthProvider = ({ children }) => {
         };
         autenticarUsuario();
     }, []);
+
+    // Función para cerrar sesión
+    const cerrarSesion = () => {
+        localStorage.removeItem("tmp_token");
+        setAuth({});
+    };
+
     return (
         <AuthContext.Provider
-                value={{
-                    auth,
-                    setAuth,
-                    cargando,
-                    cerrarSesion
-                }}
+            value={{
+                auth,
+                setAuth,
+                cargando,
+                cerrarSesion // Pasar la función cerrarSesion aquí
+            }}
         >
             {children}
         </AuthContext.Provider>
     );
 };
 
-//cerrar sesion
- const cerrarSesion = () => {
-     localStorage.removeItem("tmp_token");
-     setAuth({});
-};
-
 export { AuthProvider };
-
 export default AuthContext;
