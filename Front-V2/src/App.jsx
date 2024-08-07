@@ -17,14 +17,8 @@ import NuevoPassword from "./pages/Auth/NuevoPassword";
 import Error404 from "./pages/admin/Error404";
 import Inicio from "./pages/admin/Dashboard";
 
-// pages moviesES
-import ListMoviesES from "./pages/admin/MoviesES/ListMoviesEs";
-
-// pages moviesEN
-import ListMoviesEN from "./pages/admin/MoviesEN/ListMoviesEn";
-
-// pages moviesAD
-import ListMoviesAD from "./pages/admin/MoviesAD/ListMoviesAd";
+// pages movies
+import ListMovies from "./pages/admin/Movies/ListMovies";
 
 function App() {
   return (
@@ -57,9 +51,7 @@ function App() {
 
         <Route path="/admin/*" element={<AdminLayout />}>
           <Route index element={<Inicio />} />
-          <Route path="movie/es/list" element={<ListMoviesES />} />
-          <Route path="movie/en/list" element={<ListMoviesEN />} />
-          <Route path="movie/adult/list" element={<ListMoviesAD />} />
+          <Route path="movie/list" element={<ListMovies />} />
           <Route path="user/add" element={<Registrar />} />
         </Route>
       </Routes>

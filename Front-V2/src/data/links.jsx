@@ -25,17 +25,9 @@ export const linksContenido = [
         url: "movie/add",
       },
       {
-        name: "Catálogo películas en espa\u00f1ol",
-        url: "movie/es/list",
-      },
-      {
-        name: "Catálogo películas en Ingl\u00e9s",
-        url: "movie/en/list",
-      },
-      {
-        name: "Catálogo películas Adultos",
-        url: "movie/adult/list",
-      },
+        name: "Catálogo películas",
+        url: "movie/list",
+      }
     ],
   },
   {
@@ -51,13 +43,9 @@ export const linksContenido = [
         url: "series/addcap",
       },
       {
-        name: "Catálogo Series en Espa\u00f1ol",
+        name: "Catálogo Series",
         url: "serie/es/list",
-      },
-      {
-        name: "Catálogo Series en Ingl\u00e9s",
-        url: "serie/en/list",
-      },
+      }
     ],
   },
   {

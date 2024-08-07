@@ -14,10 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "babel-node": "^0.0.1-security",
+    "back-nodejs-api": "file:",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "dotenv": "^14.3.2",
+    "dotenv": "^14.3.3",
     "express": "^4.17.2",
     "fs": "^0.0.1-security",
     "fs-extra": "^10.0.1",

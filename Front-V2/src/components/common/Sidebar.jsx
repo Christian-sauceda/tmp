@@ -32,28 +32,31 @@ const Sidebar = ({ window, sideBarWidth, mobileOpen, handleDrawerToggle }) => {
           Panel TopMedia+
         </Typography>
       </Toolbar>
-      <Divider />
-      <br></br>
+      <Box mb={2}></Box>
       <List disablePadding>{renderLinks(linksInicio)}</List>
-      <Divider />
-      <br></br>
-      <Typography sx={{ fontWeight: "bold", ml: 2 }}>Contenido Multimedia</Typography>
+      <Box mb={2} mt={2}>
+      <Divider /> 
+      </Box>
+      <Box mb={2}>
+      <Typography sx={{ fontWeight: "bold", ml: 2,  }}>  Contenido Multimedia</Typography>
+      </Box>
       <List disablePadding>{renderLinks(linksContenido)}</List>
-      <br></br>
+      <Box mb={2} mt={2}>
+      <Divider /> 
+      </Box>
+      <Box mb={2}>
       <Typography sx={{ fontWeight: "bold", ml: 2 }}>Reportes</Typography>
+      </Box>
       <List disablePadding>{renderLinks(linksReportes)}</List>
-      <br></br>
+      <Box mb={2} mt={2}>
+      <Divider /> 
+      </Box>
+      <Box mb={2}>
       <Typography sx={{ fontWeight: "bold", ml: 2 }}>Usuarios</Typography>
+      </Box>
       <List disablePadding>{renderLinks(linksUsuarios)}</List>
-      <br></br>
-      {/* Footer del Sidebar */}
-      <div
-        style={{ position: "absolute", bottom: 0, left: 0, width: "100%", color: "#fff", padding: "10px" }}
-      >
-        <Typography variant="caption" align="center">
-          TopMedia+
-        </Typography>
-      </div>
+      <Box mb={2} mt={2}>
+      </Box>
     </div>
   );
 
